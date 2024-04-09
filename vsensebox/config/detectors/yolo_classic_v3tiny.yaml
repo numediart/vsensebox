@@ -5,5 +5,5 @@ imgsz: 416
 min_width: 35
 classes: null # NULL=Null=null is None in Python
 class_file: coco.names
-model_cfg_file: yolov3-tiny.cfg
+model_cfg_file: data/detectors/yolov3-tiny.cfg
 model_file: data/detectors/yolov3-tiny.weights
