@@ -2,8 +2,10 @@
 
 ## **VSenseBox v0.0.x - Hello World!**
 
-* `VSenseBox` [v0.0.0](https://github.com/rathaumons/vsensebox/tree/v0.0.0)
+* `VSenseBox` [v0.0.1](https://github.com/rathaumons/vsensebox/tree/v0.0.1)
+  - Fix the wrong paths in yolo_classic *.yaml
 
+* `VSenseBox` [v0.0.0](https://github.com/rathaumons/vsensebox/tree/v0.0.0)
   - Initialize first release 👋
   - Come with full [documentation](https://rathaumons.github.io/vsensebox/) 📄
   - Support both CPU and GPU ready 🚀
