@@ -83,24 +83,29 @@ All requirements are not strictly limited. However, some specific modules might 
     pip install https://github.com/rathaumons/vsensebox-data/releases/download/v0.0.0/vsensebox_data_deepsort-0.0.0-py3-none-any.whl
     ```
 
-* Quick Test
-  - On your Python terminal:
+* Let's try some basic features of `VSenseBox`
+  - Configurator GUI can be called in Python terminal:
     ```
     import vsensebox
     vsensebox.config()
     ```
-  - Now you should see the Configurator GUI like in the screenshot below.
-    <details><summary><ins>Show Configurator GUI</ins></summary><img src="https://raw.githubusercontent.com/rathaROG/screenshot/master/VSenseBox/vsensebox_config_gui.jpg"></details>
-  - For ***Linux***, if the GUI does not work, you might need to install these:
+    Now you should see the Configurator GUI like in this scheenshot:
+    <img src="https://raw.githubusercontent.com/rathaROG/screenshot/master/VSenseBox/vsensebox_config_gui.jpg">
+  - You can also easily reset the internal configurations by calling the `reset()`. **THIS CAN'T BE REVERSED!** ⚠️
     ```
-    sudo apt-get install '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
+    vsensebox.reset()
     ```
-  - For ***Ubuntu on WSL 2***, you need to install these:
-    ```
-    sudo apt-get install libgl1-mesa-glx
-    sudo apt-get install xdg-utils
-    sudo apt-get install libegl1
-    ```
+  - Check the [example page](https://rathaumons.github.io/vsensebox/examples.html) for some real coding!
+* For ***Linux***, if the GUI does not work, you might need to install these:
+  ```
+  sudo apt-get install '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
+  ```
+* For ***Ubuntu on WSL 2***, if the GUI does not work, you need to install these:
+  ```
+  sudo apt-get install libgl1-mesa-glx
+  sudo apt-get install xdg-utils
+  sudo apt-get install libegl1
+  ```
 
 ## 📢 FYI
 
