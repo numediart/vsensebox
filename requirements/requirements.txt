@@ -1,0 +1,36 @@
+### FOR MORE DETAILS -> VISIT https://rathaumons.github.io/vsensebox/getstarted.html
+### Base
+Cython>=0.29.33
+numpy
+### OpenCV
+# For GPU support, check:
+# https://github.com/rathaumons/opencv-for-pyppbox
+opencv-contrib-python
+### Common
+scikit-image
+scipy>=1.10.0
+pandas
+Pillow
+psutil
+tqdm
+matplotlib
+PyYAML
+future
+protobuf
+### Tensorflow
+# Please follow the installation on:
+# https://www.tensorflow.org/install/pip
+tensorflow
+### PyTorch
+# Please follow the installation on:
+# https://pytorch.org/get-started
+torch
+torchvision
+torchaudio
+### Tracker: SORT
+filterpy
+lapx
+### GUI
+PyQt6
+### Customized pyppbox-ultralytics
+pyppbox-ultralytics>=8.0.218

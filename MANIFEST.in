@@ -1,0 +1,10 @@
+include *.md *.in *.toml *.yaml LICENSE
+global-include vsensebox *.*
+exclude .gitignore
+recursive-exclude .git *.*
+recursive-exclude .github *.*
+recursive-exclude test *.*
+recursive-exclude docs *.*
+recursive-exclude examples *.*
+global-exclude */__pycache__
+global-exclude *.pyc *.cmd

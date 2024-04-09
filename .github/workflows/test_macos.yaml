@@ -1,0 +1,44 @@
+name: Test macOS
+on: [workflow_dispatch]
+jobs:
+  test_macos:
+    runs-on: macos-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install requirements
+      run: |
+        python -m pip install --upgrade pip
+        pip install "setuptools>=67.2.0"
+        pip install wheel build
+        cd requirements
+        pip install -r requirements.txt
+        pip freeze
+    - name: Install VSenseBox from GitHub
+      run: |
+        pip install git+https://github.com/rathaumons/vsensebox.git
+    - name: Install VSenseBox's data
+      run: |
+        pip install https://github.com/rathaumons/vsensebox-data/releases/download/v0.0.0/vsensebox_data_yolocls-0.0.0-py3-none-any.whl
+        pip install https://github.com/rathaumons/vsensebox-data/releases/download/v0.0.0/vsensebox_data_yoloult-0.0.0-py3-none-any.whl
+        pip install https://github.com/rathaumons/vsensebox-data/releases/download/v0.0.0/vsensebox_data_deepsort-0.0.0-py3-none-any.whl
+    - name: Prepare for tests
+      run: |
+        cd tests
+        python pretests.py
+    - name: Test 01
+      run: |
+        cd tests
+        python test_01.py
+    - name: Archive Results
+      uses: actions/upload-artifact@v4
+      with:
+        name: tests-results-${{ matrix.python-version }}
+        path: tests

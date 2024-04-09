@@ -1,0 +1,11 @@
+# module
+none: none
+detector: detector
+tracker: tracker
+# detector
+yolo_classic: yolo_classic
+yolo_ultralytics: yolo_ultralytics
+# tracker
+sort: sort
+deepsort: deepsort
+centroid: centroid

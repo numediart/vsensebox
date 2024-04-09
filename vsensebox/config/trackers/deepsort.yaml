@@ -1,0 +1,6 @@
+tracker: DeepSORT
+nn_budget: 100
+batch_size: 16
+nms_max_overlap: 0.5
+max_cosine_distance: 0.1
+model_file: data/trackers/mars-small128.pb

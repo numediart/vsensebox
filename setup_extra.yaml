@@ -1,0 +1,21 @@
+--- # extra data for vsensebox
+extra_data: 
+  - vsensebox
+  - vsensebox.config
+  - vsensebox.config.datasets
+  - vsensebox.config.detectors
+  - vsensebox.config.strings
+  - vsensebox.config.trackers
+  - vsensebox.data
+  - vsensebox.data.datasets
+  - vsensebox.data.detectors
+  - vsensebox.data.logs
+  - vsensebox.data.trackers
+  - vsensebox.gui
+  - vsensebox.gui.assets
+  - vsensebox.modules
+  - vsensebox.modules.detectors
+  - vsensebox.modules.trackers
+  - vsensebox.modules.trackers.utils
+  - vsensebox.utils
+  - vsensebox.vsense

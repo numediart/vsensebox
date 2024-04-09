@@ -1,0 +1,11 @@
+detector: YOLO_Ultralytics
+conf: 0.5
+iou: 0.7
+imgsz: 640
+half: False
+min_width: 35
+classes: null # NULL=Null=null is None in Python
+device: cpu
+max_det: 100
+line_width: 500
+model_file: yolov8n.pt
