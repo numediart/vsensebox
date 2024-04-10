@@ -9,13 +9,14 @@ import time
 from PyQt6 import QtCore, QtGui, QtWidgets
 from vsensebox.config.confighelper import getCFGDict, dumpDocDict
 from vsensebox.utils.about import getVersionString
-from vsensebox.utils.commontools import (joinFPathFull, normalizePathFDS,
+from vsensebox.utils.commontools import (joinFPathFull, normalizePathFDS, isExist, 
                                          isExist, getGlobalRootDir, getAncestorDir)
 
 current_dir = os.path.dirname(__file__)
 vsensebox_root = getGlobalRootDir()
 internal_config_dir = joinFPathFull(vsensebox_root, 'config')
 internal_data_dir = joinFPathFull(vsensebox_root, 'data')
+ui_tmp = joinFPathFull(current_dir, "ui.tmp")
 
 
 class Ui_CFGLoader(object):
@@ -565,6 +566,9 @@ class Ui_CFGLoader(object):
         self.par14_pushButton.clicked.connect(lambda: self.browseFile(14))
         self.par15_pushButton.clicked.connect(lambda: self.browseFile(15))
 
+        # task
+        self.checkUITMP()
+
         self.retranslateUi(CFGLoader)
         QtCore.QMetaObject.connectSlotsByName(CFGLoader)
 
@@ -825,6 +829,18 @@ class Ui_CFGLoader(object):
                 print(e)
                 self.status_lineEdit.setText("Failed to save!")
                 self.status_lineEdit.setStyleSheet("color: rgb(255, 50, 50)")
+
+    def checkUITMP(self):
+        if isExist(ui_tmp):
+            with open(ui_tmp) as ui_tmp_file:
+                lines = ui_tmp_file.read().splitlines()
+                if len(lines) > 0:
+                    if isinstance(lines[0], str):
+                        self.yaml_file_lineEdit.setText(lines[0])
+                        self.readYAML(lines[0])
+                        self.save_pushButton.setDisabled(False)
+                        self.reload_pushButton.setDisabled(False)
+            os.remove(ui_tmp)
 
     def reload(self):
         self.resetStatus()
