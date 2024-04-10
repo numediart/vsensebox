@@ -38,6 +38,8 @@ class VSense(object):
         self.assets = VSenseAssets()
         self._detector = None
         self._tracker = None
+        self._yaml_det = None
+        self._yaml_trk = None
         self._det_rel_to_root = False
         self._trk_rel_to_root = False
 
@@ -57,8 +59,11 @@ class VSense(object):
         if config_yaml is None:
             config_yaml = default_detector_yaml
             self._det_rel_to_root = det_rel_to_root
-        self._detector = checkDet(detector=self._detector, config_yaml=config_yaml, 
-                                  relative_to_vsensebox_root=self._det_rel_to_root)
+        if self._yaml_det != config_yaml:
+            self._detector = checkDet(detector=self._detector, config_yaml=config_yaml, 
+                                    relative_to_vsensebox_root=self._det_rel_to_root)
+        else:
+            self._yaml_det = config_yaml
         img, boxes_xywh, boxes_xyxy, keypoints, confs, cls = self._detector.detect(img)
         self.assets.update(
             boxes_xywh=boxes_xywh, 
@@ -84,8 +89,11 @@ class VSense(object):
         if config_yaml is None:
             config_yaml = default_tracker_yaml
             self._trk_rel_to_root = trk_rel_to_root
-        self._tracker = checkTrk(tracker=self._tracker, config_yaml=config_yaml, 
-                                 relative_to_vsensebox_root=self._trk_rel_to_root)
+        if self._yaml_trk != config_yaml:
+            self._tracker = checkTrk(tracker=self._tracker, config_yaml=config_yaml, 
+                                    relative_to_vsensebox_root=self._trk_rel_to_root)
+        else:
+            self._yaml_trk = config_yaml
         boxes_xyxy, self.assets.ids = self._tracker.update(
             self.assets.boxes_xyxy, 
             self.assets.boxes_confs, 
