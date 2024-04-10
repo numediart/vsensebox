@@ -3,6 +3,14 @@
 Configurations
 ==============
 
+vsensebox.gui.uitools
+---------------------
+
+.. automodule:: vsensebox.gui.uitools
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 vsensebox.config.configurator
 -----------------------------
 

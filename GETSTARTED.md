@@ -18,7 +18,10 @@ All requirements are not strictly limited. However, some specific modules might 
     python -m pip install --upgrade pip
     pip install "setuptools>=67.2.0"
     ```
-  - Recommend uninstalling the official `Ultralytics`: `pip uninstall -y ultralytics`
+  - Recommend uninstalling the official `Ultralytics`: 
+    ```
+    pip uninstall -y ultralytics
+    ```
 
 * Install dependencies/requirments under `vsensebox/requirements/`: 
   - On Windows:
@@ -95,6 +98,7 @@ All requirements are not strictly limited. However, some specific modules might 
     ```
     vsensebox.reset()
     ```
+  - For the details of GUI functions and configurations, check [Configurations page](https://rathaumons.github.io/vsensebox/vsensebox/config.html).
   - Check the [example page](https://rathaumons.github.io/vsensebox/examples.html) for some real coding!
 * For ***Linux***, if the GUI does not work, you might need to install these:
   ```
