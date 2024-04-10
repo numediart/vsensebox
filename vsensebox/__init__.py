@@ -7,7 +7,7 @@ from vsensebox.vsense import VSense
 from vsensebox.config.configurator import reset
 from vsensebox.gui import config
 
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 __author__ = "Ratha SIV"
 __description__ = "VSenseBox - Python toolbox for visual sensing."
 __homepage__ = "https://rathaumons.github.io/vsensebox"
