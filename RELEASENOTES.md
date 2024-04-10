@@ -2,6 +2,10 @@
 
 ## **VSenseBox v0.0.x - Hello World!**
 
+* `VSenseBox` [v0.0.3](https://github.com/rathaumons/vsensebox/tree/v0.0.3)
+  - Improve `VSense` performance
+  - Update and improve documentation
+
 * `VSenseBox` [v0.0.2](https://github.com/rathaumons/vsensebox/tree/v0.0.2)
   - Add direct YAML file reading to `config()`
   - Update and improve documentation
