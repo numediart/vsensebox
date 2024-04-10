@@ -68,8 +68,7 @@ html_theme_options = {
 # remove some primary sidebar
 html_sidebars = {
     'getstarted': [], 
-    'vsensebox/vsense': [], 
-    'vsensebox/structure': [], 
+    'vsensebox/vsense': [],  
     'vsensebox/config': [], 
     'vsensebox/utils': [], 
     'releasenotes': []
