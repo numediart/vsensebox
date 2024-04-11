@@ -13,6 +13,7 @@ from vsensebox.config.configurator import IN_ROOT_DIR, IN_CONFIG_DIR
 from vsensebox.config.confighelper import getCFGDict, dumpDocDict
 from vsensebox.utils.about import getVersionString
 from vsensebox.utils.commontools import joinFPathFull, normalizePathFDS, isExist, getAncestorDir
+from vsensebox.utils.logtools import add_warning_log
 
 
 class Ui_CFGLoader(object):
@@ -578,35 +579,36 @@ class Ui_CFGLoader(object):
         self.value_label.setText(_translate("CFGLoader", "Edit value"))
         self.file_label.setText(_translate("CFGLoader", "File?"))
         self.saveas_pushButton.setText(_translate("CFGLoader", "Save as"))
-        self.par01_value_lineEdit.setPlaceholderText(_translate("CFGLoader", "Bool/Int/Float/List/String/Path"))
+        par_value_placeholder = "Bool/Int/Float/List/String/Path"
+        self.par01_value_lineEdit.setPlaceholderText(_translate("CFGLoader", par_value_placeholder))
         self.par01_pushButton.setText(_translate("CFGLoader", "Browse"))
-        self.par02_value_lineEdit.setPlaceholderText(_translate("CFGLoader", "Bool/Int/Float/List/String/Path"))
+        self.par02_value_lineEdit.setPlaceholderText(_translate("CFGLoader", par_value_placeholder))
         self.par02_pushButton.setText(_translate("CFGLoader", "Browse"))
-        self.par03_value_lineEdit.setPlaceholderText(_translate("CFGLoader", "Bool/Int/Float/List/String/Path"))
+        self.par03_value_lineEdit.setPlaceholderText(_translate("CFGLoader", par_value_placeholder))
         self.par03_pushButton.setText(_translate("CFGLoader", "Browse"))
-        self.par04_value_lineEdit.setPlaceholderText(_translate("CFGLoader", "Bool/Int/Float/List/String/Path"))
+        self.par04_value_lineEdit.setPlaceholderText(_translate("CFGLoader", par_value_placeholder))
         self.par04_pushButton.setText(_translate("CFGLoader", "Browse"))
-        self.par05_value_lineEdit.setPlaceholderText(_translate("CFGLoader", "Bool/Int/Float/List/String/Path"))
+        self.par05_value_lineEdit.setPlaceholderText(_translate("CFGLoader", par_value_placeholder))
         self.par05_pushButton.setText(_translate("CFGLoader", "Browse"))
-        self.par06_value_lineEdit.setPlaceholderText(_translate("CFGLoader", "Bool/Int/Float/List/String/Path"))
+        self.par06_value_lineEdit.setPlaceholderText(_translate("CFGLoader", par_value_placeholder))
         self.par06_pushButton.setText(_translate("CFGLoader", "Browse"))
-        self.par07_value_lineEdit.setPlaceholderText(_translate("CFGLoader", "Bool/Int/Float/List/String/Path"))
+        self.par07_value_lineEdit.setPlaceholderText(_translate("CFGLoader", par_value_placeholder))
         self.par07_pushButton.setText(_translate("CFGLoader", "Browse"))
-        self.par08_value_lineEdit.setPlaceholderText(_translate("CFGLoader", "Bool/Int/Float/List/String/Path"))
+        self.par08_value_lineEdit.setPlaceholderText(_translate("CFGLoader", par_value_placeholder))
         self.par08_pushButton.setText(_translate("CFGLoader", "Browse"))
-        self.par09_value_lineEdit.setPlaceholderText(_translate("CFGLoader", "Bool/Int/Float/List/String/Path"))
+        self.par09_value_lineEdit.setPlaceholderText(_translate("CFGLoader", par_value_placeholder))
         self.par09_pushButton.setText(_translate("CFGLoader", "Browse"))
-        self.par10_value_lineEdit.setPlaceholderText(_translate("CFGLoader", "Bool/Int/Float/List/String/Path"))
+        self.par10_value_lineEdit.setPlaceholderText(_translate("CFGLoader", par_value_placeholder))
         self.par10_pushButton.setText(_translate("CFGLoader", "Browse"))
-        self.par11_value_lineEdit.setPlaceholderText(_translate("CFGLoader", "Bool/Int/Float/List/String/Path"))
+        self.par11_value_lineEdit.setPlaceholderText(_translate("CFGLoader", par_value_placeholder))
         self.par11_pushButton.setText(_translate("CFGLoader", "Browse"))
-        self.par12_value_lineEdit.setPlaceholderText(_translate("CFGLoader", "Bool/Int/Float/List/String/Path"))
+        self.par12_value_lineEdit.setPlaceholderText(_translate("CFGLoader", par_value_placeholder))
         self.par12_pushButton.setText(_translate("CFGLoader", "Browse"))
-        self.par13_value_lineEdit.setPlaceholderText(_translate("CFGLoader", "Bool/Int/Float/List/String/Path"))
+        self.par13_value_lineEdit.setPlaceholderText(_translate("CFGLoader", par_value_placeholder))
         self.par13_pushButton.setText(_translate("CFGLoader", "Browse"))
-        self.par14_value_lineEdit.setPlaceholderText(_translate("CFGLoader", "Bool/Int/Float/List/String/Path"))
+        self.par14_value_lineEdit.setPlaceholderText(_translate("CFGLoader", par_value_placeholder))
         self.par14_pushButton.setText(_translate("CFGLoader", "Browse"))
-        self.par15_value_lineEdit.setPlaceholderText(_translate("CFGLoader", "Bool/Int/Float/List/String/Path"))
+        self.par15_value_lineEdit.setPlaceholderText(_translate("CFGLoader", par_value_placeholder))
         self.par15_pushButton.setText(_translate("CFGLoader", "Browse"))
         self.par01_lineEdit.setPlaceholderText(_translate("CFGLoader", "Parameter 01"))
         self.par02_lineEdit.setPlaceholderText(_translate("CFGLoader", "Parameter 02"))
@@ -624,7 +626,7 @@ class Ui_CFGLoader(object):
         self.par14_lineEdit.setPlaceholderText(_translate("CFGLoader", "Parameter 14"))
         self.par15_lineEdit.setPlaceholderText(_translate("CFGLoader", "Parameter 15"))
         self.yaml_file_label.setText(_translate("CFGLoader", "You are configing file:"))
-        self.yaml_file_lineEdit.setPlaceholderText(_translate("CFGLoader", "For example: yolo_ultralytics_v9.yaml"))
+        self.yaml_file_lineEdit.setPlaceholderText(_translate("CFGLoader", "For example: yolo_ultralytics_v9c.yaml"))
         self.yaml_file_pushButton.setText(_translate("CFGLoader", "Browse"))
         self.status_lineEdit.setPlaceholderText(_translate("CFGLoader", "Status"))
         self.reload_pushButton.setText(_translate("CFGLoader", "Reload"))
@@ -717,6 +719,11 @@ class Ui_CFGLoader(object):
     def readYAML(self, yaml_file):
         config_yaml = getCFGDict(yaml_file)
         self.clearPar()
+        if len(config_yaml) > 15:
+            add_warning_log("The length of YAML configuration is greater than 15. " +
+                            "Its original content will be lost if you click save.")
+            self.status_lineEdit.setText("CONTENT WILL BE LOST!!!")
+            self.status_lineEdit.setStyleSheet("color: rgb(255, 50, 50)")
         par_num = 1
         for key, value in config_yaml.items():
             if par_num == 1:

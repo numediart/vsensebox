@@ -1,0 +1,3 @@
+tracker: BasicIoU
+min_iou: 0.4
+device: cpu
