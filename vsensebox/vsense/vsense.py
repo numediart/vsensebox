@@ -4,7 +4,7 @@
 
 
 # Configurations
-from vsensebox.config.configurator import detectors_config_dir, trackers_config_dir, internal_root_dir
+from vsensebox.config.configurator import DET_CONFIG_DIR, TRK_CONFIG_DIR, IN_ROOT_DIR
 from vsensebox.config.confighelper import getCFGDict
 
 # Utils & tools
@@ -13,14 +13,14 @@ from vsensebox.modules.trackers import checkTrk
 from vsensebox.utils.commontools import getCVMat, joinFPathFull, getAncestorDir
 
 # Default detector
-default_det = getCFGDict(joinFPathFull(detectors_config_dir, 'default.yaml'))
-default_detector_yaml = joinFPathFull(internal_root_dir, default_det['config_yaml'])
-det_rel_to_root = True if getAncestorDir(default_det['config_yaml']) == 'config/detectors' else False
+DEFAULT_DET_CONFIG = getCFGDict(joinFPathFull(DET_CONFIG_DIR, 'default.yaml'))
+DEFAULT_DET_YAML = joinFPathFull(IN_ROOT_DIR, DEFAULT_DET_CONFIG['config_yaml'])
+DET_YAML_TO_ROOT = True if getAncestorDir(DEFAULT_DET_CONFIG['config_yaml']) == 'config/detectors' else False
 
 # Default tracker
-default_trk = getCFGDict(joinFPathFull(trackers_config_dir, 'default.yaml'))
-default_tracker_yaml = joinFPathFull(internal_root_dir, default_trk['config_yaml'])
-trk_rel_to_root = True if getAncestorDir(default_trk['config_yaml']) == 'config/trackers' else False
+DEFAULT_TRK_CONFIG = getCFGDict(joinFPathFull(TRK_CONFIG_DIR, 'default.yaml'))
+DEFAULT_TRK_YAML = joinFPathFull(IN_ROOT_DIR, DEFAULT_TRK_CONFIG['config_yaml'])
+TRK_YAML_TO_ROOT = True if getAncestorDir(DEFAULT_TRK_CONFIG['config_yaml']) == 'config/trackers' else False
 
 
 class VSense(object):
@@ -57,11 +57,11 @@ class VSense(object):
         """
         if not img_is_mat: img = getCVMat(img)
         if config_yaml is None:
-            config_yaml = default_detector_yaml
-            self._det_rel_to_root = det_rel_to_root
+            config_yaml = DEFAULT_DET_YAML
+            self._det_rel_to_root = DET_YAML_TO_ROOT
         if self._yaml_det != config_yaml:
             self._detector = checkDet(detector=self._detector, config_yaml=config_yaml, 
-                                    relative_to_vsensebox_root=self._det_rel_to_root)
+                                      relative_to_vsensebox_root=self._det_rel_to_root)
         else:
             self._yaml_det = config_yaml
         img, boxes_xywh, boxes_xyxy, keypoints, confs, cls = self._detector.detect(img)
@@ -87,11 +87,11 @@ class VSense(object):
         """
         if not img_is_mat: img = getCVMat(img)
         if config_yaml is None:
-            config_yaml = default_tracker_yaml
-            self._trk_rel_to_root = trk_rel_to_root
+            config_yaml = DEFAULT_TRK_YAML
+            self._trk_rel_to_root = TRK_YAML_TO_ROOT
         if self._yaml_trk != config_yaml:
             self._tracker = checkTrk(tracker=self._tracker, config_yaml=config_yaml, 
-                                    relative_to_vsensebox_root=self._trk_rel_to_root)
+                                     relative_to_vsensebox_root=self._trk_rel_to_root)
         else:
             self._yaml_trk = config_yaml
         boxes_xyxy, self.assets.ids = self._tracker.update(

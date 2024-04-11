@@ -12,6 +12,7 @@ The examples below help you make the most use of **VSenseBox**. Before you try t
 
    examples/example_01
    examples/example_02
+   examples/example_03
 
 |
 

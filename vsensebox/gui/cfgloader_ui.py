@@ -7,16 +7,12 @@ import os
 import time
 
 from PyQt6 import QtCore, QtGui, QtWidgets
+
+from vsensebox.gui.uitools import CUR_DIR, UI_TMP
+from vsensebox.config.configurator import IN_ROOT_DIR, IN_CONFIG_DIR
 from vsensebox.config.confighelper import getCFGDict, dumpDocDict
 from vsensebox.utils.about import getVersionString
-from vsensebox.utils.commontools import (joinFPathFull, normalizePathFDS, isExist, 
-                                         isExist, getGlobalRootDir, getAncestorDir)
-
-current_dir = os.path.dirname(__file__)
-vsensebox_root = getGlobalRootDir()
-internal_config_dir = joinFPathFull(vsensebox_root, 'config')
-internal_data_dir = joinFPathFull(vsensebox_root, 'data')
-ui_tmp = joinFPathFull(current_dir, "ui.tmp")
+from vsensebox.utils.commontools import joinFPathFull, normalizePathFDS, isExist, getAncestorDir
 
 
 class Ui_CFGLoader(object):
@@ -641,7 +637,7 @@ class Ui_CFGLoader(object):
         self.resetStatus()
         file_filter = "Config file (*.yaml *.json)"
         input_file, _ = QtWidgets.QFileDialog.getOpenFileName(None, "Browse config file", 
-                                                              internal_config_dir, file_filter)
+                                                              IN_CONFIG_DIR, file_filter)
         if input_file:
             self.yaml_file_lineEdit.setText(input_file)
             self.readYAML(input_file)
@@ -651,9 +647,9 @@ class Ui_CFGLoader(object):
     def browseFile(self, par_num):
         file_filter = "File (*.*)"
         input_file, _ = QtWidgets.QFileDialog.getOpenFileName(None, "Browse file", 
-                                                              internal_data_dir, file_filter)
-        input_file = normalizePathFDS(vsensebox_root, input_file)
+                                                              IN_ROOT_DIR, file_filter)
         if input_file:
+            input_file = normalizePathFDS(IN_ROOT_DIR, input_file)
             if par_num == 1:
                 self.par01_value_lineEdit.setText(input_file)
             elif par_num == 2:
@@ -816,7 +812,7 @@ class Ui_CFGLoader(object):
         config_yaml = self.getConfig()
         file_filter = "File (*.yaml)"
         yaml_file, _ = QtWidgets.QFileDialog.getSaveFileName(None, "Save configuration", 
-                                                             internal_config_dir, file_filter)
+                                                             IN_CONFIG_DIR, file_filter)
         if isExist(getAncestorDir(yaml_file)) and yaml_file != '':
             date_time = str(time.strftime("%Y-%m-%d %Hh%Mm%Ss"))
             try:
@@ -831,16 +827,16 @@ class Ui_CFGLoader(object):
                 self.status_lineEdit.setStyleSheet("color: rgb(255, 50, 50)")
 
     def checkUITMP(self):
-        if isExist(ui_tmp):
-            with open(ui_tmp) as ui_tmp_file:
-                lines = ui_tmp_file.read().splitlines()
+        if isExist(UI_TMP):
+            with open(UI_TMP) as _ui_tmp_file:
+                lines = _ui_tmp_file.read().splitlines()
                 if len(lines) > 0:
                     if isinstance(lines[0], str):
                         self.yaml_file_lineEdit.setText(lines[0])
                         self.readYAML(lines[0])
                         self.save_pushButton.setDisabled(False)
                         self.reload_pushButton.setDisabled(False)
-            os.remove(ui_tmp)
+            os.remove(UI_TMP)
 
     def reload(self):
         self.resetStatus()
@@ -867,7 +863,7 @@ if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     CFGLoader = QtWidgets.QWidget()
-    CFGLoader.setWindowIcon(QtGui.QIcon(joinFPathFull(current_dir, "assets/settings.ico")))
+    CFGLoader.setWindowIcon(QtGui.QIcon(joinFPathFull(CUR_DIR, "assets/settings.ico")))
     ui = Ui_CFGLoader()
     ui.setupUi(CFGLoader)
     CFGLoader.show()

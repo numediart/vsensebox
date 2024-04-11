@@ -98,7 +98,7 @@ class YOLO_Ultralytics(object):
         dt_keypoints = dets[0].keypoints
         if dt_keypoints is not None:
             for box_xyxy, conf, kp, cl in zip(dt_boxes_xyxy, dt_confidences, 
-                                          reversed(dt_keypoints), dt_classes):
+                                              reversed(dt_keypoints), dt_classes):
                 box_xyxy = box_xyxy.astype(int)
                 box_xywh = to_xywh(box_xyxy)
                 if box_xywh[2] >= self.cfg.min_width:

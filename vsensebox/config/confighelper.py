@@ -7,12 +7,9 @@ import json
 import yaml
 from yaml.loader import SafeLoader
 
-from vsensebox.config.strings import UnifiedStrings
+from .strings import USTR
 from vsensebox.utils.commontools import getAbsPathFDS, isExist
 from vsensebox.utils.logtools import add_error_log
-
-
-unified_strings = UnifiedStrings()
 
 
 def isDictString(input_string):
@@ -228,7 +225,7 @@ def dumpDocDict(output_file, doc, header):
                 if str(value) == "None" or value is None:
                     value = "null # NULL=Null=null is None in Python"
                 if key == "detector" or key == "tracker":
-                    value = unified_strings.getUnifiedFormat(value)
+                    value = USTR.getUnifiedFormat(value)
                 dumping.write('%s: %s\n' % (key, value))
     except ValueError as e:
         msg = 'dumpDocDict() -> ' + str(e)
@@ -257,7 +254,7 @@ def dumpListDocDict(output_file, doc_list, header):
                     if str(value) == "None" or value is None:
                         value = "null # NULL=Null=null is None in Python"
                     if key == "detector" or key == "tracker":
-                        value = unified_strings.getUnifiedFormat(value)
+                        value = USTR.getUnifiedFormat(value)
                     dumping.write('%s: %s\n' % (key, value))
                 if sep_index < len(doc_list):
                     dumping.write("---\n")

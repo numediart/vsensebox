@@ -6,7 +6,7 @@
 import cv2
 
 from .commontools import getCVMat
-from .logtools import add_error_log, add_warning_log
+from .logtools import add_warning_log
 
 def draw_boxes(img, 
                ids=[], 

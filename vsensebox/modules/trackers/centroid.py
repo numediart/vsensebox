@@ -26,14 +26,14 @@ class Centroid(object):
         self.max_spread = cfg.max_spread
         self.pref_y = cfg.pref_y
 
-    def __generateID__(self):
+    def _generateID(self):
         self.used_ids = list(set(self.used_ids))
         if len(self.used_ids) == 0: aID = 0
         else: aID = max(self.used_ids) + 1
         self.used_ids.append(aID)
         return aID
     
-    def __findRepspoint__(self, box_xyxy):
+    def _findRepspoint(self, box_xyxy):
         x = int((box_xyxy[0] + box_xyxy[2]) / 2)
         y = 0
         if self.pref_y.lower() == "center":
@@ -44,7 +44,7 @@ class Centroid(object):
             y = min(box_xyxy[1], box_xyxy[3])
         return (x, y)
 
-    def __findPID__(self, point):
+    def _findPID(self, point):
         pindex = -1
         min_d = 8192
         i = 0
@@ -85,13 +85,13 @@ class Centroid(object):
         self.current_id = []
         self.used_ids = []
 
-        self.current_ct = [self.__findRepspoint__(b) for b in boxes_xyxy]
+        self.current_ct = [self._findRepspoint(b) for b in boxes_xyxy]
         hang_indexes_in_clist = []
         len_bb = len(boxes_xyxy)
         if len_bb > 0:
             for i in range(0, len_bb):
                 self.current_id.append(-1)
-                pindex = self.__findPID__(self.current_ct[i])
+                pindex = self._findPID(self.current_ct[i])
                 if pindex >= 0:
                     prev_id = self.previous_id[pindex]
                     if prev_id in self.used_ids:
@@ -104,6 +104,6 @@ class Centroid(object):
             len_hlist = len(hang_indexes_in_clist)
             if len_hlist > 0:
                 for index in hang_indexes_in_clist:
-                    self.current_id[index] = self.__generateID__()
+                    self.current_id[index] = self._generateID()
         
         return boxes_xyxy, self.current_id

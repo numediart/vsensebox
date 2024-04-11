@@ -7,24 +7,24 @@ import os
 import time
 import logging
 
-__timestamp__ = str(time.strftime("%Y%m%d_%H%M%S"))
-__vsensebox_root__ = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
-__log_dir__ = os.path.join(__vsensebox_root__, "data/logs").replace(os.sep, '/')
-__log_txt_path__ = os.path.join(__log_dir__, "log_" + __timestamp__ + ".txt")
-__max_age__ = 86400 * 1 # 1 DAY
+_TIMESTAMP = str(time.strftime("%Y%m%d_%H%M%S"))
+_VSENSEBOX_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
+_LOG_DIR = os.path.join(_VSENSEBOX_ROOT, "data/logs").replace(os.sep, '/')
+_LOG_TXT_PATH = os.path.join(_LOG_DIR, "log_" + _TIMESTAMP + ".txt")
+_MAX_AGE = 86400 * 1 # 1 DAY
 
 # Remove old logs
-if os.path.exists(__log_dir__):
-    for filename in os.listdir(__log_dir__):
+if os.path.exists(_LOG_DIR):
+    for filename in os.listdir(_LOG_DIR):
         if "git" in filename: continue
-        filestamp = os.stat(os.path.join(__log_dir__, filename)).st_mtime
-        if  filestamp < time.time() - __max_age__:
-            os.remove(os.path.join(__log_dir__, filename))
-else: os.makedirs(__log_dir__)
+        filestamp = os.stat(os.path.join(_LOG_DIR, filename)).st_mtime
+        if  filestamp < time.time() - _MAX_AGE:
+            os.remove(os.path.join(_LOG_DIR, filename))
+else: os.makedirs(_LOG_DIR)
 
 # Initial logger
 logging.basicConfig(
-    filename=__log_txt_path__,
+    filename=_LOG_TXT_PATH,
     filemode='a',
     format='%(asctime)s %(levelname)-3s %(message)-3s',
     datefmt='%H:%M:%S',
@@ -32,7 +32,7 @@ logging.basicConfig(
 )
 
 # Add header
-with open(__log_txt_path__, 'w+') as log_txt:
+with open(_LOG_TXT_PATH, 'w+') as log_txt:
     log_txt.write("-------------------------------------------------")
     log_txt.write("-------------------------------------------------\n")
     log_txt.write("#################################################")

@@ -7,7 +7,6 @@ import os
 import sys
 import cv2
 import numpy as np
-from pathlib import Path 
 
 
 def getCVMat(img, to_rgb=False):
@@ -90,6 +89,7 @@ def getFileName(input):
     """
     :meta private:
     """
+    from pathlib import Path 
     return Path(input).name
 
 def getGlobalRootDir():

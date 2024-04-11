@@ -8,7 +8,7 @@ from yaml.loader import SafeLoader
 from vsensebox.utils.commontools import joinFPathFull, getGlobalRootDir
 
 
-default_strings_yaml = joinFPathFull(getGlobalRootDir(), "config/strings/strings.yaml")
+DEFAULT_STR_YAML = joinFPathFull(getGlobalRootDir(), "config/strings/strings.yaml")
 
 class UnifiedStrings(object):
 
@@ -37,7 +37,7 @@ class UnifiedStrings(object):
         Unified string of word 'Centroid'.
     """
 
-    def __init__(self, strings_yaml=default_strings_yaml):
+    def __init__(self, strings_yaml=DEFAULT_STR_YAML):
         """Initailize by calling :meth:`load(strings_yaml=strings_yaml)`.
 
         Parameters
@@ -114,3 +114,5 @@ class UnifiedStrings(object):
             res = input_str
         
         return res
+
+USTR = UnifiedStrings()

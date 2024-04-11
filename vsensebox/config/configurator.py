@@ -3,17 +3,18 @@
 # Copyright (C) 2024 UMONS-Numediart
 
 
-from .strings import UnifiedStrings
+from .strings import USTR
 from .confighelper import getCFGDict, getListCFGDoc, dumpDocDict, dumpListDocDict
-from vsensebox.utils.logtools import add_warning_log, add_error_log, add_info_log
+from vsensebox.utils.logtools import add_warning_log, add_error_log
 from vsensebox.utils.commontools import (joinFPathFull, getGlobalRootDir, 
                                          getAdaptiveAbsPathFDS, normalizePathFDS)
 
-unified_strings = UnifiedStrings()
-internal_root_dir = getGlobalRootDir()
-internal_config_dir = joinFPathFull(internal_root_dir, 'config')
-detectors_config_dir = joinFPathFull(internal_config_dir, 'detectors')
-trackers_config_dir = joinFPathFull(internal_config_dir, 'trackers')
+IN_ROOT_DIR = getGlobalRootDir()
+IN_DATA_DIR = joinFPathFull(IN_ROOT_DIR, 'data')
+IN_CONFIG_DIR = joinFPathFull(IN_ROOT_DIR, 'config')
+DET_CONFIG_DIR = joinFPathFull(IN_CONFIG_DIR, 'detectors')
+TRK_CONFIG_DIR = joinFPathFull(IN_CONFIG_DIR, 'trackers')
+STR_CONFIG_DIR = joinFPathFull(IN_CONFIG_DIR, 'strings')
 
 
 class BaseCGF(object):
@@ -31,7 +32,7 @@ class BaseCGF(object):
     """
 
     def __init__(self):
-        self.unified_strings = unified_strings
+        self.unified_strings = USTR
         self.configs = {}
     
     def loadDoc(self, input):
@@ -130,7 +131,7 @@ class DCFG_YOLOCLS(BaseCGF):
         super().__init__()
         self.from_dir = ""
         if relative_to_vsensebox_root:
-            self.from_dir = internal_root_dir
+            self.from_dir = IN_ROOT_DIR
         if cfg is not None:
             self.set(cfg)
 
@@ -179,9 +180,9 @@ class DCFG_YOLOCLS(BaseCGF):
             "imgsz": self.imgsz,
             "min_width": self.min_width,
             "classes": self.classes,
-            "class_file": normalizePathFDS(internal_root_dir, self.class_file),
-            "model_cfg_file": normalizePathFDS(internal_root_dir, self.model_cfg_file),
-            "model_file": normalizePathFDS(internal_root_dir, self.model_file),
+            "class_file": normalizePathFDS(IN_ROOT_DIR, self.class_file),
+            "model_cfg_file": normalizePathFDS(IN_ROOT_DIR, self.model_cfg_file),
+            "model_file": normalizePathFDS(IN_ROOT_DIR, self.model_file),
         }
         return yolocs_doc
 
@@ -240,7 +241,7 @@ class DCFG_YOLOULT(BaseCGF):
         super().__init__()
         self.from_dir = ""
         if relative_to_vsensebox_root:
-            self.from_dir = internal_root_dir
+            self.from_dir = IN_ROOT_DIR
         if cfg is not None:
             self.set(cfg)
 
@@ -295,7 +296,7 @@ class DCFG_YOLOULT(BaseCGF):
             "device": self.device,
             "max_det": self.max_det,
             "line_width": self.line_width,
-            "model_file": normalizePathFDS(internal_root_dir, self.model_file),
+            "model_file": normalizePathFDS(IN_ROOT_DIR, self.model_file),
         }
         return yolout_doc
 
@@ -336,7 +337,7 @@ class TCFG_Centroid(BaseCGF):
         super().__init__()
         self.from_dir = ""
         if relative_to_vsensebox_root:
-            self.from_dir = internal_root_dir
+            self.from_dir = IN_ROOT_DIR
         if cfg is not None:
             self.set(cfg)
 
@@ -418,7 +419,7 @@ class TCFG_SORT(BaseCGF):
         super().__init__()
         self.from_dir = ""
         if relative_to_vsensebox_root:
-            self.from_dir = internal_root_dir
+            self.from_dir = IN_ROOT_DIR
         if cfg is not None:
             self.set(cfg)
 
@@ -509,7 +510,7 @@ class TCFG_DeepSORT(BaseCGF):
         super().__init__()
         self.from_dir = ""
         if relative_to_vsensebox_root:
-            self.from_dir = internal_root_dir
+            self.from_dir = IN_ROOT_DIR
         if cfg is not None:
             self.set(cfg)
 
@@ -554,16 +555,7 @@ class TCFG_DeepSORT(BaseCGF):
             "batch_size": self.batch_size,
             "nms_max_overlap": self.nms_max_overlap,
             "max_cosine_distance": self.max_cosine_distance,
-            "model_file": normalizePathFDS(internal_root_dir, self.model_file)
+            "model_file": normalizePathFDS(IN_ROOT_DIR, self.model_file)
         }
         return deepsort_doc
 
-def reset():
-    """Reset the internal configurations.
-    """
-    import shutil
-    strings_config_dir = joinFPathFull(internal_config_dir, 'strings')
-    shutil.unpack_archive(joinFPathFull(strings_config_dir, 'strings.zip'), strings_config_dir)
-    shutil.unpack_archive(joinFPathFull(detectors_config_dir, 'detectors.zip'), detectors_config_dir)
-    shutil.unpack_archive(joinFPathFull(trackers_config_dir, 'trackers.zip'), trackers_config_dir)
-    add_info_log("Reset successfully!")
