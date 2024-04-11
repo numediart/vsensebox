@@ -2,6 +2,12 @@
 
 ## **VSenseBox v0.0.x - Hello World!**
 
+* `VSenseBox` [v0.0.4](https://github.com/rathaumons/vsensebox/tree/v0.0.4)
+  - Add minor bug fixes
+  - Add example 03 for multithreading
+  - Improve overall performance
+  - Update and improve documentation
+
 * `VSenseBox` [v0.0.3](https://github.com/rathaumons/vsensebox/tree/v0.0.3)
   - Improve `VSense` performance
   - Update and improve documentation
