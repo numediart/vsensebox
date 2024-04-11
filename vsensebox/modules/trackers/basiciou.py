@@ -18,8 +18,8 @@ class BasicIoU(object):
 
         Parameters
         ----------
-        cfg : TCFG_Centroid
-            A :class:`TCFG_Centroid` object which manages the configurations of tracker Centroid.
+        cfg : TCFG_BasicIoU
+            A :class:`TCFG_BasicIoU` object which manages the configurations of tracker BasicIoU.
         """
         self.prev_cls = []
         self.prev_ids = []
