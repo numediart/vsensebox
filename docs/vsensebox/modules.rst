@@ -31,6 +31,9 @@ The table below shows all the current supported modules which are integrated in 
    |            | DeepSORT     | DeepSORT         | | * Integrated by embedding                     |
    |            |              |                  | | * `DeepSORT repo`_                            |
    |            |              |                  | | * Run on: CPU or GPU (Tensorflow)             |
+   |            +--------------+------------------+-------------------------------------------------+
+   |            | BasicIoU     | BasicIoU         | | * Built-in / Native                           |
+   |            |              |                  | | * Run on: CPU or GUP                          |
    +------------+--------------+------------------+-------------------------------------------------+
 
 .. _v2, v3: https://pjreddie.com/darknet/yolo/
