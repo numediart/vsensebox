@@ -19,22 +19,6 @@ class UnifiedStrings(object):
     ----------
     data : dict, auto
         Data or documents read from strings.yaml.
-    none : str, auto
-        Unified string of word 'None'.
-    detector : str, auto
-        Unified string of word 'Detector'.
-    tracker : str, auto
-        Unified string of word 'Tracker'.
-    yolo_classic : str, auto
-        Unified string of words 'YOLO Classic'.
-    yolo_ultralytics : str, auto
-        Unified string of words 'YOLO Ultralytics'.
-    sort : str, auto
-        Unified string of word 'SORT'.
-    deepsort : str, auto
-        Unified string of word 'DeepSORT'.
-    centroid : str, auto
-        Unified string of word 'Centroid'.
     """
 
     def __init__(self, strings_yaml=DEFAULT_STR_YAML):
@@ -45,7 +29,7 @@ class UnifiedStrings(object):
         strings_yaml : str, default='{vsensebox root}/config/strings/strings.yaml'
             A path of a YAML file which stores the unified strings.
         """
-        self.load(strings_yaml=strings_yaml)
+        self.data = self.load(strings_yaml=strings_yaml)
 
     def load(self, strings_yaml): 
         """Load a configuration dictionary of a single document as a dictionary from 
@@ -57,28 +41,8 @@ class UnifiedStrings(object):
             A path of a YAML file which stores the unified strings.
         """
         with open(strings_yaml, 'r') as str_cfg:
-            self.data = yaml.load(str_cfg, Loader=SafeLoader)
-        self.set(self.data)
-
-    def set(self, data):
-        """Set a configuration dictionary of a single document to all attributes.
-
-        Parameters
-        ----------
-        data : dict
-            A configuration dictionary of a single document of the unified strings.
-        """
-        # module
-        self.none = data['none']
-        self.detector = data['detector']
-        self.tracker = data['tracker']
-        # detector
-        self.yolo_classic = data['yolo_classic']
-        self.yolo_ultralytics = data['yolo_ultralytics']
-        # tracker
-        self.sort = data['sort']
-        self.deepsort = data['deepsort']
-        self.centroid = data['centroid']
+            data = yaml.load(str_cfg, Loader=SafeLoader)
+        return data
 
     def getUnifiedFormat(self, input_str):
         """Return a standard unified format string.
@@ -94,25 +58,29 @@ class UnifiedStrings(object):
             A unified format string.
         """
         res = ""
-        input_str = str(input_str)
-
-        if 'yolo' in input_str.lower():
-            res = input_str.title().replace("Yolo", "YOLO")
-        elif 'ultralytics' in input_str.lower():
-            res = input_str.title().replace("ultralytics", "Ultralytics")
-        elif self.centroid.lower() == input_str.lower():
-            res = input_str.title()
-        elif self.sort.lower() == input_str.lower():
-            res = input_str.upper()
-        elif self.deepsort.lower() == input_str.lower():
-            res = input_str.title().replace("Deepsort", "DeepSORT")
-        elif self.none.lower() == input_str.lower():
-            res = input_str.title()
-        elif input_str.lower in ['top', 'center', 'bottom']:
-            res = input_str.title()
+        if isinstance(input_str, str):
+            if input_str.lower() in self.data['detector'].lower():
+                res = self.data['detector']
+            elif input_str.lower() in self.data['yolo_classic'].lower():
+                res = self.data['yolo_classic']
+            elif input_str.lower() in self.data['yolo_ultralytics'].lower():
+                res = self.data['yolo_ultralytics']
+            elif input_str.lower() in self.data['tracker'].lower():
+                res = self.data['tracker']
+            elif input_str.lower() in self.data['centroid'].lower():
+                res = self.data['centroid']
+            elif input_str.lower() in self.data['sort'].lower():
+                res = self.data['sort']
+            elif input_str.lower() in self.data['deepsort'].lower():
+                res = self.data['deepsort']
+            elif input_str.lower() in self.data['basiciou'].lower():
+                res = self.data['basiciou']
+            elif input_str.lower in ['top', 'center', 'bottom']:
+                res = input_str.title()
+            else:
+                res = input_str
         else:
             res = input_str
-        
         return res
 
 USTR = UnifiedStrings()

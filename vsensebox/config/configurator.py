@@ -208,8 +208,8 @@ class DCFG_YOLOULT(BaseCGF):
         Minimum width filter.
     classes : list[int, ...]
         Parameter classes of YOLO Ultralytics.
-    device : int
-        Parameter device of YOLO Ultralytics.
+    device : str
+        Parameter of device to compute; for example, 0 or cpu.
     max_det : int
         Parameter max_det of YOLO Ultralytics.
     line_width : int
@@ -317,22 +317,14 @@ class TCFG_Centroid(BaseCGF):
     """
 
     def __init__(self, cfg=None, relative_to_vsensebox_root=False):
-        """Initialize the class according to the :obj:`relative_to_vsensebox_root` which defines 
-        whether all the paths inside your configuration file are relative to :code:`{vsensebox root}` 
-        or not. If all the paths inside your configuration file have full absolute paths, setting 
-        :obj:`relative_to_vsensebox_root` is optional.
+        """Initialize the class.
 
         Parameters
         ----------
         cfg : str or dict
             A YAML/JSON file path, or a raw/ready dictionary.
         relative_to_vsensebox_root : bool, default=False
-            (1) Set :code:`relative_to_vsensebox_root=False` to use your current working directory 
-            as where all the paths in your configuration file are relative to; for example, 
-            the path of :attr:`model_file` inside your configuration file is set relatively to 
-            your current working directory. 
-            (2) Set :code:`relative_to_vsensebox_root=True` when all the paths in your configuration 
-            file are relative to :code:`{vsensebox root}`.
+            Being consistent with others, will be ignored.
         """
         super().__init__()
         self.from_dir = ""
@@ -381,6 +373,78 @@ class TCFG_Centroid(BaseCGF):
         return centroid_doc
 
 
+class TCFG_BasicIoU(BaseCGF):
+
+    """
+    A class used to store the necessary configurations of tracker BasicIoU.
+
+    Attributes
+    ----------
+    tracker : str
+        Configured name of tracker BasicIoU.
+    min_iou : float
+        Minimum IoU value for matching.
+    device : str
+        Device to compute; for example, 0 or cpu.
+    """
+
+    def __init__(self, cfg=None, relative_to_vsensebox_root=False):
+        """Initialize the class.
+
+        Parameters
+        ----------
+        cfg : str or dict
+            A YAML/JSON file path, or a raw/ready dictionary.
+        relative_to_vsensebox_root : bool, default=False
+            Being consistent with others, will be ignored.
+        """
+        super().__init__()
+        self.from_dir = ""
+        if relative_to_vsensebox_root:
+            self.from_dir = IN_ROOT_DIR
+        if cfg is not None:
+            self.set(cfg)
+
+    def set(self, input):
+        """
+        Set configurations according to :obj:`input`.
+
+        Parameters
+        ----------
+        input : str or dict
+            A YAML/JSON file path, or a raw/ready dictionary.
+        """
+        super().loadDoc(input)
+        if self.configs:
+            try:
+                self.tracker = self.unified_strings.getUnifiedFormat(self.configs['tracker'])
+                self.min_iou = self.configs['min_iou']
+                self.device = self.configs['device']
+                self.configs = self.getDocument()
+            except Exception as e:
+                msg = "TCFG_BasicIoU : set() -> " + str(e)
+                add_error_log(msg)
+                raise ValueError(msg)
+        else:
+            add_warning_log("TCFG_BasicIoU : set() -> The configuration is empty.")
+
+    def getDocument(self):
+        """Return a configuration dictionary of a single document of the attributes which 
+        are the parameters of tracker BasicIoU.
+
+        Returns
+        -------
+        dict
+            A configuration dictionary of a single document of the configurations.
+        """
+        basiciou_doc = {
+            "tracker": self.tracker,
+            "min_iou": self.min_iou,
+            "device": self.device
+        }
+        return basiciou_doc
+
+
 class TCFG_SORT(BaseCGF):
 
     """
@@ -399,22 +463,14 @@ class TCFG_SORT(BaseCGF):
     """
 
     def __init__(self, cfg=None, relative_to_vsensebox_root=False):
-        """Initialize the class according to the :obj:`relative_to_vsensebox_root` which defines 
-        whether all the paths inside your configuration file are relative to :code:`{vsensebox root}` 
-        or not. If all the paths inside your configuration file have full absolute paths, setting 
-        :obj:`relative_to_vsensebox_root` is optional.
+        """Initialize the class.
 
         Parameters
         ----------
         cfg : str or dict
             A YAML/JSON file path, or a raw/ready dictionary.
         relative_to_vsensebox_root : bool, default=False
-            (1) Set :code:`relative_to_vsensebox_root=False` to use your current working directory 
-            as where all the paths in your configuration file are relative to; for example, 
-            the path of :attr:`model_file` inside your configuration file is set relatively to 
-            your current working directory. 
-            (2) Set :code:`relative_to_vsensebox_root=True` when all the paths in your configuration 
-            file are relative to :code:`{vsensebox root}`.
+            Being consistent with others, will be ignored.
         """
         super().__init__()
         self.from_dir = ""

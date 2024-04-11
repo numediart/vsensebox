@@ -224,7 +224,8 @@ def dumpDocDict(output_file, doc, header):
                 key = str(key).lower()
                 if str(value) == "None" or value is None:
                     value = "null # NULL=Null=null is None in Python"
-                if key == "detector" or key == "tracker":
+                if key.lower() in ["detector", "tracker"]:
+                    key = USTR.getUnifiedFormat(key)
                     value = USTR.getUnifiedFormat(value)
                 dumping.write('%s: %s\n' % (key, value))
     except ValueError as e:
@@ -253,7 +254,8 @@ def dumpListDocDict(output_file, doc_list, header):
                     key = str(key).lower()
                     if str(value) == "None" or value is None:
                         value = "null # NULL=Null=null is None in Python"
-                    if key == "detector" or key == "tracker":
+                    if key.lower() in ["detector", "tracker"]:
+                        key = USTR.getUnifiedFormat(key)
                         value = USTR.getUnifiedFormat(value)
                     dumping.write('%s: %s\n' % (key, value))
                 if sep_index < len(doc_list):
