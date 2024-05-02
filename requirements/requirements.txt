@@ -32,5 +32,5 @@ filterpy
 lapx
 ### GUI
 PyQt6
-### Customized pyppbox-ultralytics
-pyppbox-ultralytics>=8.0.218
+### Customized vsensebox-ultralytics
+vsensebox-ultralytics>=8.1.48

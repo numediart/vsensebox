@@ -119,4 +119,4 @@ OpenCV is widely used in many well-known packages, but the majority of the prebu
 
 ### 2️⃣ Customized Ultralytics
 
-Also, similar to `pyppbox-opencv`, our custom `ultralytics` is changed to [`pyppbox-ultralytics`](https://github.com/rathaumons/ultralytics-for-pyppbox), but this time, the module name is still the same `ultralytics` and it is the main reason why the official `ultralytics` must be removed. Find out more why `pyppbox` and `vsensebox` need the customized `pyppbox-ultralytics` -> [[Repo]](https://github.com/rathaumons/ultralytics-for-pyppbox) [[PyPI]](https://pypi.org/project/pyppbox-ultralytics/)
+Also, similar to `pyppbox-opencv`, our custom `ultralytics` is changed to [`vsensebox-ultralytics`](https://github.com/rathaumons/ultralytics-for-vsensebox), but this time, the module name is still the same `ultralytics` and it is the main reason why the official `ultralytics` must be removed. Find out more why `VSenseBox` needs the customized `vsensebox-ultralytics` -> [[Repo]](https://github.com/rathaumons/ultralytics-for-vsensebox) [[PyPI]](https://pypi.org/project/vsensebox-ultralytics/)
