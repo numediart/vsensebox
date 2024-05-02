@@ -29,7 +29,7 @@ torchvision
 torchaudio
 ### Tracker: SORT
 filterpy
-lapx
+lapx>=0.5.8
 ### GUI
 PyQt6
 ### Customized vsensebox-ultralytics
