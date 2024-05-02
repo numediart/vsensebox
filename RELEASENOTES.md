@@ -2,6 +2,12 @@
 
 ## **VSenseBox v0.1.x - One Small Step!**
 
+* `VSenseBox` [v0.1.1](https://github.com/rathaumons/vsensebox/tree/v0.1.1)
+  - Replace [`pyppbox-ultralytics`](https://github.com/rathaumons/ultralytics-for-pyppbox) with [`vsensebox-ultralytics`](https://github.com/rathaumons/ultralytics-for-vsensebox)
+  - Use `lapx>=0.5.8` for speed boost
+  - Update and improve documentation
+  - Update GitHub workflow
+
 * `VSenseBox` [v0.1.0](https://github.com/rathaumons/vsensebox/tree/v0.1.0)
   - Add basic IoU tracker -> `BasicIoU`
   - Fix minor bugs
