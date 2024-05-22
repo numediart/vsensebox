@@ -1,9 +1,17 @@
 # Release Notes 
 
+## **VSenseBox v0.2.x - Some Changes!**
+
+* `VSenseBox` [v0.2.0](https://github.com/numediart/vsensebox/tree/v0.2.0)
+  - Transfer from [rathaumons](https://github.com/rathaumons) to [numediart](https://github.com/numediart)
+  - Change `boxes_confs` to `boxes_conf` for `VSenseAssets`
+  - Update requirements
+  - Update and improve documentation
+
 ## **VSenseBox v0.1.x - One Small Step!**
 
 * `VSenseBox` [v0.1.1](https://github.com/numediart/vsensebox/tree/v0.1.1)
-  - Replace [`pyppbox-ultralytics`](https://github.com/numediart/ultralytics-for-pyppbox) with [`vsensebox-ultralytics`](https://github.com/numediart/ultralytics-for-vsensebox)
+  - Replace [`pyppbox-ultralytics`](https://github.com/rathaumons/ultralytics-for-pyppbox) with [`vsensebox-ultralytics`](https://github.com/numediart/ultralytics-for-vsensebox)
   - Use `lapx>=0.5.8` for speed boost
   - Update and improve documentation
   - Update GitHub workflow
