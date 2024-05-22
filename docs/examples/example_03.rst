@@ -8,7 +8,7 @@ Example 03: Detect and track objects in multithreading
 
 ℹ️ **Source code and input file(s)** -> `{vsensebox repo}/examples`_
 
-.. _{vsensebox repo}/examples: https://github.com/rathaumons/vsensebox/tree/main/examples
+.. _{vsensebox repo}/examples: https://github.com/numediart/vsensebox/tree/main/examples
 
 .. literalinclude:: ../../examples/example_03.py
    :encoding: latin-1

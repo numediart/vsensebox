@@ -36,7 +36,7 @@ def main_setup():
     setup(
         name="vsensebox",
         version=get_version_string(),
-        url="https://github.com/rathaumons/vsensebox",
+        url="https://github.com/numediart/vsensebox",
         license="GPL-3.0-or-later",
         description="VSenseBox - Python toolbox for visual sensing.",
         long_description=long_description,

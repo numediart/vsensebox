@@ -1,5 +1,5 @@
 <div align="center">
 
-**[📗 Documentation](https://rathaumons.github.io/vsensebox/) | [🚀 Getting started](https://rathaumons.github.io/vsensebox/getstarted.html) | [💡 Examples](https://rathaumons.github.io/vsensebox/examples.html)**
+**[📗 Documentation](https://numediart.github.io/vsensebox/) | [🚀 Getting started](https://numediart.github.io/vsensebox/getstarted.html) | [💡 Examples](https://numediart.github.io/vsensebox/examples.html)**
 
 </div>

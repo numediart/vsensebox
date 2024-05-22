@@ -5,7 +5,7 @@ The examples below help you make the most use of **VSenseBox**. Before you try t
 
 ℹ️ Source code and **input files** in the examples are available here: `{vsensebox repo}/examples`_.
 
-.. _{vsensebox repo}/examples: https://github.com/rathaumons/vsensebox/tree/main/examples
+.. _{vsensebox repo}/examples: https://github.com/numediart/vsensebox/tree/main/examples
 
 .. toctree::
    :maxdepth: 1

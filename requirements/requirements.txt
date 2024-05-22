@@ -1,4 +1,4 @@
-### FOR MORE DETAILS -> VISIT https://rathaumons.github.io/vsensebox/getstarted.html
+### FOR MORE DETAILS -> VISIT https://numediart.github.io/vsensebox/getstarted.html
 ### Base
 Cython>=0.29.33
 numpy

@@ -55,7 +55,7 @@ html_theme_options = {
     "icon_links": [
         {
             "name": "GitHub",
-            "url": "https://github.com/rathaumons/vsensebox",
+            "url": "https://github.com/numediart/vsensebox",
             "icon": "fa-brands fa-square-github",
             "type": "fontawesome",
         },

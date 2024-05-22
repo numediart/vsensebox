@@ -8,7 +8,7 @@ Example 02: Detect and track objects with custom configs
 
 ℹ️ **Source code and input file(s)** -> `{vsensebox repo}/examples`_
 
-.. _{vsensebox repo}/examples: https://github.com/rathaumons/vsensebox/tree/main/examples
+.. _{vsensebox repo}/examples: https://github.com/numediart/vsensebox/tree/main/examples
 
 .. literalinclude:: ../../examples/example_02.py
    :encoding: latin-1

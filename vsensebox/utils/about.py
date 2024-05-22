@@ -24,11 +24,11 @@ def github():
     :meta private:
     """
     import webbrowser
-    webbrowser.open('https://github.com/rathaumons/vsensebox.git')
+    webbrowser.open('https://github.com/numediart/vsensebox.git')
 
 def docs():
     """
     :meta private:
     """
     import webbrowser
-    webbrowser.open('https://rathaumons.github.io/vsensebox')
+    webbrowser.open('https://numediart.github.io/vsensebox')

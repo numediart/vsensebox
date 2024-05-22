@@ -24,12 +24,12 @@ jobs:
         pip freeze
     - name: Install VSenseBox from GitHub
       run: |
-        pip install git+https://github.com/rathaumons/vsensebox.git
+        pip install git+https://github.com/numediart/vsensebox.git
     - name: Install VSenseBox's data
       run: |
-        pip install https://github.com/rathaumons/vsensebox-data/releases/download/v0.0.0/vsensebox_data_yolocls-0.0.0-py3-none-any.whl
-        pip install https://github.com/rathaumons/vsensebox-data/releases/download/v0.0.0/vsensebox_data_yoloult-0.0.0-py3-none-any.whl
-        pip install https://github.com/rathaumons/vsensebox-data/releases/download/v0.0.0/vsensebox_data_deepsort-0.0.0-py3-none-any.whl
+        pip install https://github.com/numediart/vsensebox-data/releases/download/v0.0.0/vsensebox_data_yolocls-0.0.0-py3-none-any.whl
+        pip install https://github.com/numediart/vsensebox-data/releases/download/v0.0.0/vsensebox_data_yoloult-0.0.0-py3-none-any.whl
+        pip install https://github.com/numediart/vsensebox-data/releases/download/v0.0.0/vsensebox_data_deepsort-0.0.0-py3-none-any.whl
     - name: Prepare for tests
       run: |
         cd tests
