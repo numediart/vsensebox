@@ -1,14 +1,14 @@
-# 👁️📦 [**VSenseBox**](https://github.com/rathaumons/vsensebox)
+# 👁️📦 [**VSenseBox**](https://github.com/numediart/vsensebox)
 
 <div align="center">
 
-[![Documentation](https://github.com/rathaumons/vsensebox/actions/workflows/documentation.yaml/badge.svg)](https://github.com/rathaumons/vsensebox/actions/workflows/documentation.yaml) [![Publish on PyPI](https://github.com/rathaumons/vsensebox/actions/workflows/publish_pypi.yaml/badge.svg)](https://github.com/rathaumons/vsensebox/actions/workflows/publish_pypi.yaml) [![Test Build](https://github.com/rathaumons/vsensebox/actions/workflows/test_build.yaml/badge.svg)](https://github.com/rathaumons/vsensebox/actions/workflows/test_build.yaml)
+[![Documentation](https://github.com/numediart/vsensebox/actions/workflows/documentation.yaml/badge.svg)](https://github.com/numediart/vsensebox/actions/workflows/documentation.yaml) [![Publish on PyPI](https://github.com/numediart/vsensebox/actions/workflows/publish_pypi.yaml/badge.svg)](https://github.com/numediart/vsensebox/actions/workflows/publish_pypi.yaml) [![Test Build](https://github.com/numediart/vsensebox/actions/workflows/test_build.yaml/badge.svg)](https://github.com/numediart/vsensebox/actions/workflows/test_build.yaml)
 
-[![Test Windows](https://github.com/rathaumons/vsensebox/actions/workflows/test_windows.yaml/badge.svg)](https://github.com/rathaumons/vsensebox/actions/workflows/test_windows.yaml) [![Test Linux](https://github.com/rathaumons/vsensebox/actions/workflows/test_linux.yaml/badge.svg)](https://github.com/rathaumons/vsensebox/actions/workflows/test_linux.yaml) [![Test macOS](https://github.com/rathaumons/vsensebox/actions/workflows/test_macos.yaml/badge.svg)](https://github.com/rathaumons/vsensebox/actions/workflows/test_macos.yaml)
+[![Test Windows](https://github.com/numediart/vsensebox/actions/workflows/test_windows.yaml/badge.svg)](https://github.com/numediart/vsensebox/actions/workflows/test_windows.yaml) [![Test Linux](https://github.com/numediart/vsensebox/actions/workflows/test_linux.yaml/badge.svg)](https://github.com/numediart/vsensebox/actions/workflows/test_linux.yaml) [![Test macOS](https://github.com/numediart/vsensebox/actions/workflows/test_macos.yaml/badge.svg)](https://github.com/numediart/vsensebox/actions/workflows/test_macos.yaml)
 
 <img src="https://raw.githubusercontent.com/rathaROG/screenshot/master/VSenseBox/vsensebox.jpg"><br />
 
-**[📗 Documentation](https://rathaumons.github.io/vsensebox/) | [🚀 Getting started](https://rathaumons.github.io/vsensebox/getstarted.html) | [💡 Examples](https://rathaumons.github.io/vsensebox/examples.html)**
+**[📗 Documentation](https://numediart.github.io/vsensebox/) | [🚀 Getting started](https://numediart.github.io/vsensebox/getstarted.html) | [💡 Examples](https://numediart.github.io/vsensebox/examples.html)**
 
 </div>
 
