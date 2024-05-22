@@ -8,7 +8,7 @@ All requirements are not strictly limited. However, some specific modules might 
 
 * Prerequisite: 
   - Python [[3.9-3.12]](https://www.python.org/downloads/)
-  - Local `VSenseBox` repo: `git clone https://github.com/rathaumons/vsensebox.git`
+  - Local `VSenseBox` repo: `git clone https://github.com/numediart/vsensebox.git`
 
 * Before you install dependencies/requirements:
   - For Linux, recommend changing `python3` to `python`: `sudo apt install python-is-python3`
