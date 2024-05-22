@@ -1,6 +1,6 @@
 # 🚀 Getting Started
 
-Installing `VSenseBox` is very easy and straightforward. You can install from [PyPI](https://pypi.org/project/vsensebox/) directly or use the prebuilt `.whl` files on [GitHub releases](https://github.com/rathaumons/vsensebox/releases) or install from GitHub directly or build it from source on your own machine. However, in order to get it work, you need to install all the necessary dependencies or requirements for the modules you need.
+Installing `VSenseBox` is very easy and straightforward. You can install from [PyPI](https://pypi.org/project/vsensebox/) directly or use the prebuilt `.whl` files on [GitHub releases](https://github.com/numediart/vsensebox/releases) or install from GitHub directly or build it from source on your own machine. However, in order to get it work, you need to install all the necessary dependencies or requirements for the modules you need.
 
 ## ⚙️ Requirements
 
@@ -55,7 +55,7 @@ All requirements are not strictly limited. However, some specific modules might 
       ```
 
 * ***ATTENTION ⚠️⚠️⚠️***
-  - Default configurations of `VSenseBox` are set to use GPU, and to switch to CPU, you need to set `cpu` as string for the parameter `device` in the YAML config file; for example, line #8 in [`yolo_ultralytics_v9c.yaml`](https://github.com/rathaumons/vsensebox/blob/main/vsensebox/config/detectors/yolo_ultralytics_v9c.yaml).
+  - Default configurations of `VSenseBox` are set to use GPU, and to switch to CPU, you need to set `cpu` as string for the parameter `device` in the YAML config file; for example, line #8 in [`yolo_ultralytics_v9c.yaml`](https://github.com/numediart/vsensebox/blob/main/vsensebox/config/detectors/yolo_ultralytics_v9c.yaml).
 
 
 ## 💽 Setup
@@ -63,13 +63,13 @@ All requirements are not strictly limited. However, some specific modules might 
 `vsensebox` is the main package and if you use the classic YOLO detectors and DeepSORT tracker, etc., you need to also install `vsensebox-data-xxx`.
 
 * Install `vsensebox`
-  - Download and install the latest wheel in GitHub [releases](https://github.com/rathaumons/vsensebox/releases) or install from [PyPI](https://pypi.org/project/vsensebox/):
+  - Download and install the latest wheel in GitHub [releases](https://github.com/numediart/vsensebox/releases) or install from [PyPI](https://pypi.org/project/vsensebox/):
     ```
     pip install vsensebox
     ``` 
   - Or install directly from GitHub:
     ```
-    pip install git+https://github.com/rathaumons/vsensebox.git
+    pip install git+https://github.com/numediart/vsensebox.git
     ```
   - Or build from source:
     ```
@@ -77,13 +77,13 @@ All requirements are not strictly limited. However, some specific modules might 
     python -m build --wheel --skip-dependency-check --no-isolation
     ```
 
-* Install [`vsensebox-data-xxx`](https://github.com/rathaumons/vsensebox-data/)
-  - Download the latest from GitHub [releases](https://github.com/rathaumons/vsensebox-data/releases) and install
+* Install [`vsensebox-data-xxx`](https://github.com/numediart/vsensebox-data/)
+  - Download the latest from GitHub [releases](https://github.com/numediart/vsensebox-data/releases) and install
   - Or install the ones you need directly from the links below:
     ```
-    pip install https://github.com/rathaumons/vsensebox-data/releases/download/v0.0.0/vsensebox_data_yolocls-0.0.0-py3-none-any.whl
-    pip install https://github.com/rathaumons/vsensebox-data/releases/download/v0.0.0/vsensebox_data_yoloult-0.0.0-py3-none-any.whl
-    pip install https://github.com/rathaumons/vsensebox-data/releases/download/v0.0.0/vsensebox_data_deepsort-0.0.0-py3-none-any.whl
+    pip install https://github.com/numediart/vsensebox-data/releases/download/v0.0.0/vsensebox_data_yolocls-0.0.0-py3-none-any.whl
+    pip install https://github.com/numediart/vsensebox-data/releases/download/v0.0.0/vsensebox_data_yoloult-0.0.0-py3-none-any.whl
+    pip install https://github.com/numediart/vsensebox-data/releases/download/v0.0.0/vsensebox_data_deepsort-0.0.0-py3-none-any.whl
     ```
 
 * Let's try some basic features of `VSenseBox`
@@ -98,8 +98,8 @@ All requirements are not strictly limited. However, some specific modules might 
     ```
     vsensebox.reset()
     ```
-  - For the details of GUI functions and configurations, check [Configurations page](https://rathaumons.github.io/vsensebox/vsensebox/config.html).
-  - Check the [Examples page](https://rathaumons.github.io/vsensebox/examples.html) for some real coding!
+  - For the details of GUI functions and configurations, check [Configurations page](https://numediart.github.io/vsensebox/vsensebox/config.html).
+  - Check the [Examples page](https://numediart.github.io/vsensebox/examples.html) for some real coding!
 * For ***Linux***, if the GUI does not work, you might need to install these:
   ```
   sudo apt-get install '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
@@ -119,4 +119,4 @@ OpenCV is widely used in many well-known packages, but the majority of the prebu
 
 ### 2️⃣ Customized Ultralytics
 
-Also, similar to `pyppbox-opencv`, our custom `ultralytics` is changed to [`vsensebox-ultralytics`](https://github.com/rathaumons/ultralytics-for-vsensebox), but this time, the module name is still the same `ultralytics` and it is the main reason why the official `ultralytics` must be removed. Find out more why `VSenseBox` needs the customized `vsensebox-ultralytics` -> [[Repo]](https://github.com/rathaumons/ultralytics-for-vsensebox) [[PyPI]](https://pypi.org/project/vsensebox-ultralytics/)
+Also, similar to `pyppbox-opencv`, our custom `ultralytics` is changed to [`vsensebox-ultralytics`](https://github.com/numediart/ultralytics-for-vsensebox), but this time, the module name is still the same `ultralytics` and it is the main reason why the official `ultralytics` must be removed. Find out more why `VSenseBox` needs the customized `vsensebox-ultralytics` -> [[Repo]](https://github.com/rathaumons/ultralytics-for-vsensebox) [[PyPI]](https://pypi.org/project/vsensebox-ultralytics/)
