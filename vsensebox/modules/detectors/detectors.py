@@ -9,7 +9,19 @@ from vsensebox.config.configurator import DCFG_YOLOULT, DCFG_YOLOCLS
 
 
 def checkDet(detector, config_yaml, relative_to_vsensebox_root):
-    
+    """Automatically check, select, and config the supported detector according to the 
+    input :obj:`config_yaml`.
+
+    Parameters
+    ----------
+    detector : detector object
+        A detector object; for example, :class:`YOLO_Ultralytics` or :class:`YOLO_Classic`.
+    config_yaml : str or dict
+        A YAML/JSON file path, or a raw/ready dictionary.
+    relative_to_vsensebox_root : bool
+        This parameter is passed to the corresponding configurator; for example, 
+        :class:`DCFG_YOLOULT` or :class:`DCFG_YOLOCLS`.
+    """
     cfg = getCFGDict(config_yaml)
     det_name = USTR.getUnifiedFormat(cfg['detector'])
 

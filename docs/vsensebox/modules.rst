@@ -33,7 +33,7 @@ The table below shows all the current supported modules which are integrated in 
    |            |              |                  | | * Run on: CPU or GPU (Tensorflow)             |
    |            +--------------+------------------+-------------------------------------------------+
    |            | BasicIoU     | BasicIoU         | | * Built-in / Native                           |
-   |            |              |                  | | * Run on: CPU or GUP                          |
+   |            |              |                  | | * Run on: CPU or GUP (PyTorch)                |
    +------------+--------------+------------------+-------------------------------------------------+
 
 .. _v2, v3: https://pjreddie.com/darknet/yolo/

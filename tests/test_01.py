@@ -29,7 +29,7 @@ while cap.isOpened():
         frame = draw_boxes(
             frame, ids=vs.assets.ids, 
             boxes_xyxy=vs.assets.boxes_xyxy, 
-            boxes_confs=vs.assets.boxes_confs
+            boxes_conf=vs.assets.boxes_conf
         )
 
         # Save frame as jpg

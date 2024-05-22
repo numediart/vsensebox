@@ -9,7 +9,19 @@ from vsensebox.config.configurator import TCFG_Centroid, TCFG_SORT, TCFG_DeepSOR
 
 
 def checkTrk(tracker, config_yaml, relative_to_vsensebox_root):
+    """Automatically check, select, and config the supported tracker according to the 
+    input :obj:`config_yaml`.
 
+    Parameters
+    ----------
+    tracker : tracker object
+        A tracker object; for example, :class:`Centroid` or :class:`SORT`.
+    config_yaml : str or dict
+        A YAML/JSON file path, or a raw/ready dictionary.
+    relative_to_vsensebox_root : bool
+        This parameter is passed to the corresponding configurator; for example, 
+        :class:`TCFG_Centroid` or :class:`TCFG_SORT`.
+    """
     cfg = getCFGDict(config_yaml)
     trk_name = USTR.getUnifiedFormat(cfg['tracker'])
 

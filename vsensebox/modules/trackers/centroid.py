@@ -57,14 +57,14 @@ class Centroid(object):
         if min_d > self.max_spread: pindex = -1
         return pindex
 
-    def update(self, boxes_xyxy, boxes_confs, boxes_cls=None, img=None):
+    def update(self, boxes_xyxy, boxes_conf, boxes_cls=None, img=None):
         """Update the tracker and return a track list.
 
         Parameters
         ----------
         boxes_xyxy : list[[X1, Y1, X2, Y2], ...]
             A list of boxes; for example, [[X1, Y1, X2, Y2], [X1, Y1, X2, Y2], ...].
-        boxes_confs : list[float, ...]
+        boxes_conf : list[float, ...]
             Being consistent with other trackers, will be ignored.
         boxes_cls : list[int, ...], default=None
             Being consistent with other trackers, will be ignored.

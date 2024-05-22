@@ -23,7 +23,7 @@ visual_image = draw_boxes(
     input_image, 
     ids=results.ids, 
     boxes_xyxy=results.boxes_xyxy, 
-    boxes_confs=results.boxes_confs, 
+    boxes_conf=results.boxes_conf, 
     img_is_mat=False
 )
 

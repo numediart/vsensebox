@@ -26,14 +26,14 @@ class SORT(object):
         """
         self.st = ST(cfg.max_age, cfg.min_hits, cfg.iou_threshold)
 
-    def update(self, boxes_xyxy, boxes_confs, boxes_cls=None, img=None):
+    def update(self, boxes_xyxy, boxes_conf, boxes_cls=None, img=None):
         """Update the tracker and return a track list.
 
         Parameters
         ----------
         boxes_xyxy : list[[X1, Y1, X2, Y2], ...]
           A list of boxes; for example, [[X1, Y1, X2, Y2], [X1, Y1, X2, Y2], ...].
-        boxes_confs : list[float, ...]
+        boxes_conf : list[float, ...]
           A list of detection confidence corresponding to boxes_xyxy.
         boxes_cls : list[int, ...], default=None
           Being consistent with other trackers, will be ignored.
@@ -48,7 +48,7 @@ class SORT(object):
             A list of IDs corresponding to the the list of boxes.
         """
         detection = []
-        for b, c in zip(boxes_xyxy, boxes_confs):
+        for b, c in zip(boxes_xyxy, boxes_conf):
           b = np.append(b, c)
           detection.append(b)
         track = self.st.update(np.array(detection)).astype(int)

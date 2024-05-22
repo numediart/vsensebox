@@ -12,7 +12,7 @@ def draw_boxes(img,
                ids=[], 
                show_ids=True, 
                boxes_xyxy=[], 
-               boxes_confs=[], 
+               boxes_conf=[], 
                boxes_color=(255, 255, 0), 
                boxes_thickness=2, 
                text_color=(150, 200, 50), 
@@ -30,7 +30,7 @@ def draw_boxes(img,
         Whether to visualize the IDs.
     boxes_xyxy : list[[X1, Y1, X2, Y2], ...], default=[]
         A list of bounding boxes; for example, [[X1, Y1, X2, Y2], [X1, Y1, X2, Y2], ...].
-    boxes_confs : list[float, ...], default=[]
+    boxes_conf : list[float, ...], default=[]
         A list of detection confidences corresponding to bounding boxes.
     boxes_color : tuple(int, int, int), default=(255, 255, 0)
         Color space of bounding boxes.
@@ -69,7 +69,7 @@ def draw_boxes(img,
         )
         conf = 0.0
         try:
-            conf = format(boxes_confs[i], '.2f')
+            conf = format(boxes_conf[i], '.2f')
             cv2.putText(img, str(conf), (int(boxes_xyxy[i][0]) + 5, int(boxes_xyxy[i][3]) - 5), 
                         text_font, text_font_scale, text_color, text_thickness)
         except Exception as e:

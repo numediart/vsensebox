@@ -25,8 +25,7 @@ TRK_YAML_TO_ROOT = True if getAncestorDir(DEFAULT_TRK_CONFIG['config_yaml']) == 
 
 class VSense(object):
 
-    """
-    VSense is used to operate the object detection and tracking.
+    """VSense is used to operate the object detection and tracking.
 
     Attributes
     ----------
@@ -69,7 +68,7 @@ class VSense(object):
             boxes_xywh=boxes_xywh, 
             boxes_xyxy=boxes_xyxy, 
             keypoints=keypoints, 
-            boxes_confs=confs,
+            boxes_conf=confs,
             boxes_cls=cls
         )
 
@@ -96,7 +95,7 @@ class VSense(object):
             self._yaml_trk = config_yaml
         boxes_xyxy, self.assets.ids = self._tracker.update(
             self.assets.boxes_xyxy, 
-            self.assets.boxes_confs, 
+            self.assets.boxes_conf, 
             boxes_cls=self.assets.boxes_cls, 
             img=img
         )
@@ -113,7 +112,7 @@ class VSenseAssets(object):
         A list of bounding boxes; for example, [[X1, Y1, X2, Y2], [X1, Y1, X2, Y2], ...].
     boxes_xywh : list[[X, Y, W, H], ...], optional
         A list of bounding boxes; for example, [[X, Y, W, H], [X, Y, W, H], ...].
-    boxes_confs : list[float, ...], optional
+    boxes_conf : list[float, ...], optional
         A list of detection confidences corresponding to bounding boxes.
     boxes_cls : list[int, ...], optional
         A list of detection class corresponding to bounding boxes.
@@ -132,7 +131,7 @@ class VSenseAssets(object):
         """
         self.boxes_xyxy = []
         self.boxes_xywh = []
-        self.boxes_confs = []
+        self.boxes_conf = []
         self.boxes_cls = []
         self.keypoints = []
         self.ids = []
@@ -142,7 +141,7 @@ class VSenseAssets(object):
     def update(self, 
                boxes_xyxy=[], 
                boxes_xywh=[], 
-               boxes_confs=[], 
+               boxes_conf=[], 
                boxes_cls=[], 
                keypoints=[], 
                ids=[], 
@@ -156,7 +155,7 @@ class VSenseAssets(object):
             A list of bounding boxes; for example, [[X1, Y1, X2, Y2], [X1, Y1, X2, Y2], ...].
         boxes_xywh : list[[X, Y, W, H], ...], optional
             A list of bounding boxes; for example, [[X, Y, W, H], [X, Y, W, H], ...].
-        boxes_confs : list[float, ...], optional
+        boxes_conf : list[float, ...], optional
             A list of detection confidences corresponding to bounding boxes.
         boxes_cls : list[int, ...], optional
             A list of detection class corresponding to bounding boxes.
@@ -171,7 +170,7 @@ class VSenseAssets(object):
         """
         self.boxes_xyxy = boxes_xyxy
         self.boxes_xywh = boxes_xywh
-        self.boxes_confs = boxes_confs
+        self.boxes_conf = boxes_conf
         self.boxes_cls = boxes_cls
         self.keypoints = keypoints
         self.ids = ids

@@ -8,7 +8,6 @@ import sys
 import cv2
 import numpy as np
 
-
 def getCVMat(img, to_rgb=False):
     """
     :meta private:

@@ -31,7 +31,7 @@ def detect_and_track(vsense, input_video, det_yaml, trk_yaml, name="Detect & Tra
             frame = draw_boxes(
                 frame, ids=vsense.assets.ids, 
                 boxes_xyxy=vsense.assets.boxes_xyxy, 
-                boxes_confs=vsense.assets.boxes_confs
+                boxes_conf=vsense.assets.boxes_conf
             )
 
             # Display
