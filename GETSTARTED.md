@@ -38,11 +38,13 @@ All requirements are not strictly limited. However, some specific modules might 
   - On Linux:
     - With GPU:
       ```
+      python -m pip install tensorflow[and-cuda] # TensorFlow GPU
       pip install torch torchvision torchaudio
       pip install -r requirements.txt
       ```
     - For CPU-only:
       ```
+      python -m pip install tensorflow # TensorFlow CPU
       pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
       pip install -r requirements.txt
       ```
@@ -73,7 +75,7 @@ All requirements are not strictly limited. However, some specific modules might 
     ```
   - Or build from source:
     ```
-    pip install wheel build PyYAML
+    pip install setuptools wheel build PyYAML
     python -m build --wheel --skip-dependency-check --no-isolation
     ```
 
