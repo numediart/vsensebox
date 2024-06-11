@@ -108,9 +108,7 @@ All requirements are not strictly limited. However, some specific modules might 
   ```
 * For ***Ubuntu on WSL 2***, if the GUI does not work, you need to install these:
   ```
-  sudo apt-get install libgl1-mesa-glx
-  sudo apt-get install xdg-utils
-  sudo apt-get install libegl1
+  sudo apt-get install libgl1-mesa-glx xdg-utils libegl1
   ```
 
 ## 📢 FYI
