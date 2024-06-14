@@ -1,10 +1,9 @@
 ### FOR MORE DETAILS -> VISIT https://numediart.github.io/vsensebox/getstarted.html
 ### Base
-Cython>=0.29.33
+Cython>=0.29.37
 numpy
 ### OpenCV
-# For GPU support, check:
-# https://github.com/rathaumons/opencv-for-pyppbox
+# For GPU support -> Check https://github.com/rathaumons/opencv-for-pyppbox
 opencv-contrib-python
 ### Common
 scikit-image
