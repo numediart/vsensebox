@@ -57,7 +57,7 @@ All requirements are not strictly limited. However, some specific modules might 
       ```
 
 * ***ATTENTION ⚠️⚠️⚠️***
-  - Default configurations of `VSenseBox` are set to use GPU, and to switch to CPU, you need to set `cpu` as string for the parameter `device` in the YAML config file; for example, line #8 in [`yolo_ultralytics_v9c.yaml`](https://github.com/numediart/vsensebox/blob/main/vsensebox/config/detectors/yolo_ultralytics_v9c.yaml).
+  - Default configurations of `VSenseBox` are set to use GPU, and to switch to CPU, you need to set `cpu` as string for the parameter `device` in the YAML config file; for example, line #8 in [`yolo_ultralytics_v8s.yaml`](https://github.com/numediart/vsensebox/blob/main/vsensebox/config/detectors/yolo_ultralytics_v8s.yaml).
 
 
 ## 💽 Setup
