@@ -1,5 +1,14 @@
 # Release Notes 
 
+## **VSenseBox v0.3.x - Another Step!**
+
+* `VSenseBox` [v0.3.0](https://github.com/numediart/vsensebox/tree/v0.3.0)
+  - Add YOLOv10 and YOLOv9 config files
+  - Add frame rate to example 02 using `sfps`
+  - Update requirements
+  - Update and improve documentation
+  - Update and improve GitHub workflows
+
 ## **VSenseBox v0.2.x - Some Changes!**
 
 * `VSenseBox` [v0.2.0](https://github.com/numediart/vsensebox/tree/v0.2.0)
