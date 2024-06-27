@@ -4,7 +4,7 @@
 
 * `VSenseBox` [v0.3.0](https://github.com/numediart/vsensebox/tree/v0.3.0)
   - Add YOLOv10 and YOLOv9 config files
-  - Add frame rate to example 02 using `sfps`
+  - Add frame rate to example 02 using [`sfps`](https://github.com/rathaROG/smooth-fps)
   - Update requirements
   - Update and improve documentation
   - Update and improve GitHub workflows
