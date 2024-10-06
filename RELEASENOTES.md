@@ -1,5 +1,13 @@
 # Release Notes 
 
+## **VSenseBox v0.4.x - Hello Ultralytics YOLOv11!**
+
+* `VSenseBox` [v0.4.0](https://github.com/numediart/vsensebox/tree/v0.4.0)
+  - Add Ultralytics YOLOv11 config files
+  - Use Ultralytics YOLOv11 in examples and tests
+  - Update requirements for Ultralytics YOLOv11
+  - Update documentation and GitHub workflows
+
 ## **VSenseBox v0.3.x - Another Step!**
 
 * `VSenseBox` [v0.3.0](https://github.com/numediart/vsensebox/tree/v0.3.0)
