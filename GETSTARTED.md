@@ -84,7 +84,7 @@ All requirements are not strictly limited. However, some specific modules might 
   - Or install the ones you need directly from the links below:
     ```
     pip install https://github.com/numediart/vsensebox-data/releases/download/v0.0.0/vsensebox_data_yolocls-0.0.0-py3-none-any.whl
-    pip install https://github.com/numediart/vsensebox-data/releases/download/v0.0.1/vsensebox_data_yoloult-0.0.1-py3-none-any.whl
+    pip install https://github.com/numediart/vsensebox-data/releases/download/v0.0.2/vsensebox_data_yoloult-0.0.2-py3-none-any.whl
     pip install https://github.com/numediart/vsensebox-data/releases/download/v0.0.0/vsensebox_data_deepsort-0.0.0-py3-none-any.whl
     ```
 
