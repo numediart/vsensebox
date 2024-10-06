@@ -95,7 +95,7 @@ All requirements are not strictly limited. However, some specific modules might 
     vsensebox.config()
     ```
     Now you should see the Configurator GUI like in this scheenshot:
-    <img src="https://raw.githubusercontent.com/rathaROG/screenshot/master/VSenseBox/vsensebox_config_gui.jpg">
+    <img src="https://raw.githubusercontent.com/rathaROG/screenshot/refs/heads/master/VSenseBox/vsensebox_config_gui.jpg">
   - You can also easily reset the internal configurations by calling the `reset()`. **THIS CAN'T BE REVERSED!** ⚠️
     ```
     vsensebox.reset()

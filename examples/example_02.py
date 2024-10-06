@@ -22,10 +22,10 @@ while cap.isOpened():
     hasFrame, frame = cap.read()
     if hasFrame:
 
-        # Detect object using local YAML config > yolo_ultralytics_v8n.yaml
+        # Detect object using local YAML config > yolo_ultralytics_v11n.yaml
         # More detector config files -> vsensebox/config/detectors
         vs.detect(img=frame, 
-                  config_yaml="yolo_ultralytics_v8n.yaml", 
+                  config_yaml="yolo_ultralytics_v11n.yaml", 
                   img_is_mat=True)
 
         # Track object using local YAML config -> sort.yaml

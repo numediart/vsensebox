@@ -626,7 +626,7 @@ class Ui_CFGLoader(object):
         self.par14_lineEdit.setPlaceholderText(_translate("CFGLoader", "Parameter 14"))
         self.par15_lineEdit.setPlaceholderText(_translate("CFGLoader", "Parameter 15"))
         self.yaml_file_label.setText(_translate("CFGLoader", "You are configing file:"))
-        self.yaml_file_lineEdit.setPlaceholderText(_translate("CFGLoader", "For example: yolo_ultralytics_v9c.yaml"))
+        self.yaml_file_lineEdit.setPlaceholderText(_translate("CFGLoader", "For example: yolo_ultralytics_v11s.yaml"))
         self.yaml_file_pushButton.setText(_translate("CFGLoader", "Browse"))
         self.status_lineEdit.setPlaceholderText(_translate("CFGLoader", "Status"))
         self.reload_pushButton.setText(_translate("CFGLoader", "Reload"))

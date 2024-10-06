@@ -51,12 +51,12 @@ if __name__ == '__main__':
 
     vs1_thread = threading.Thread(
         target=detect_and_track, 
-        args=(vs1, "gta.mp4", "yolo_ultralytics_v8n.yaml", "sort.yaml", "VSense 1")
+        args=(vs1, "gta.mp4", "yolo_ultralytics_v11n.yaml", "sort.yaml", "VSense 1")
     )
 
     vs2_thread = threading.Thread(
         target=detect_and_track, 
-        args=(vs2, "gta.mp4", "yolo_ultralytics_v8n.yaml", "centroid.yaml", "VSense 2")
+        args=(vs2, "gta.mp4", "yolo_ultralytics_v11n.yaml", "centroid.yaml", "VSense 2")
     )
 
     vs1_thread.start()

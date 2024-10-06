@@ -7,7 +7,7 @@ internal_config_dir = joinFPathFull(internal_root_dir, 'config')
 detectors_config_dir = joinFPathFull(internal_config_dir, 'detectors')
 
 # Set "cpu"
-config_yaml = joinFPathFull(detectors_config_dir, "yolo_ultralytics_v8n.yaml")
+config_yaml = joinFPathFull(detectors_config_dir, "yolo_ultralytics_v11n.yaml")
 cfg = DCFG_YOLOULT(cfg=config_yaml, relative_to_vsensebox_root=True)
 cfg.device = "cpu"
 cfg.configs['device'] = "cpu"

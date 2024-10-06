@@ -28,10 +28,10 @@ torchvision
 torchaudio
 ### Tracker: SORT
 filterpy
-lapx>=0.5.9
+lapx>=0.5.10
 ### GUI
 PyQt6
 ### Customized vsensebox-ultralytics
-vsensebox-ultralytics>=8.2.45
+vsensebox-ultralytics>=8.3.5
 ### Frame rate calculator in examples
 sfps
