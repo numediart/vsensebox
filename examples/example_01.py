@@ -15,7 +15,8 @@ vs = VSense()
 # See example_02.py for using custom or local config file :)
 vs.detect(img=input_image, img_is_mat=False)
 
-# All results are stored as `vs.assets`
+# All results are stored as `vs.assets`. For more details:
+# https://numediart.github.io/vsensebox/vsensebox/vsense.html
 results = vs.assets
 
 # Draw bounding boxes of the detected objects
