@@ -27,32 +27,32 @@ All requirements are not strictly limited. However, some specific modules might 
   - On Windows:
     - With GPU:
       ```
-      pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+      pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
       pip install -r requirements.txt
       ```
     - For CPU-only:
       ```
-      pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+      pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
       pip install -r requirements.txt
       ```
   - On Linux:
     - With GPU:
       ```
       python -m pip install tensorflow[and-cuda] # TensorFlow GPU
-      pip install torch torchvision torchaudio
+      pip install torch torchvision
       pip install -r requirements.txt
       ```
     - For CPU-only:
       ```
       python -m pip install tensorflow # TensorFlow CPU
-      pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+      pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
       pip install -r requirements.txt
       ```
   - On macOS:
     - With GPU: Not available!
     - For CPU:
       ```
-      pip install torch torchvision torchaudio
+      pip install torch torchvision
       pip install -r requirements.txt
       ```
 
