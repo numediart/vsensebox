@@ -7,11 +7,11 @@ Installing `VSenseBox` is very easy and straightforward. You can install from [P
 All requirements are not strictly limited. However, some specific modules might need some special dependencies; for example, `YOLO_Classic` (With `.weights` model) runs faster using [OpenCV DNN](https://docs.opencv.org/4.x/d2/d58/tutorial_table_of_content_dnn.html) with GPU. In this case, you might need to build OpenCV from source with GPU support or use our [`pyppbox-opencv`](https://github.com/rathaumons/opencv-for-pyppbox) instead of the official `opencv-contrib-python`.
 
 * Prerequisite: 
-  - Python [[3.9-3.12]](https://www.python.org/downloads/)
+  - Python [[3.9-3.12]](https://www.python.org/downloads/) (For ***macOS*** -> Use Python 3.11 for bug-free GUI)
   - Local `VSenseBox` repo: `git clone https://github.com/numediart/vsensebox.git`
 
 * Before you install dependencies/requirements:
-  - For Linux, recommend changing `python3` to `python`: `sudo apt install python-is-python3`
+  - For ***Linux***, recommend changing `python3` to `python`: `sudo apt install python-is-python3`
   - If you prefer conda + Python [3.9-3.12]: `conda create --name vsensebox_env python=3.11`
   - Upgrade `pip` and `setuptools`:
     ```
@@ -24,41 +24,37 @@ All requirements are not strictly limited. However, some specific modules might 
     ```
 
 * Install dependencies/requirments under `vsensebox/requirements/`: 
-  - On Windows:
+  - For ***Windows***:
     - With GPU:
       ```
       pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
       pip install -r requirements.txt
       ```
-    - For CPU-only:
+    - With CPU-only (Or skip this and go straight to ***Setup*** section below):
       ```
       pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
       pip install -r requirements.txt
       ```
-  - On Linux:
+  - For ***Linux***:
     - With GPU:
       ```
       python -m pip install tensorflow[and-cuda] # TensorFlow GPU
       pip install torch torchvision
       pip install -r requirements.txt
       ```
-    - For CPU-only:
+    - With CPU-only (Or skip this and go straight to ***Setup*** section below):
       ```
       python -m pip install tensorflow # TensorFlow CPU
       pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
       pip install -r requirements.txt
       ```
-  - On macOS:
+  - For ***macOS***:
     - With GPU: Not available!
-    - For CPU:
+    - For CPU (Or skip this and go straight to ***Setup*** section below):
       ```
       pip install torch torchvision
       pip install -r requirements.txt
       ```
-
-* ***ATTENTION ⚠️⚠️⚠️***
-  - Default configurations of `VSenseBox` are set to use GPU, and to switch to CPU, you need to set `cpu` as string for the parameter `device` in the YAML config file; for example, line #8 in [`yolo_ultralytics_v8s.yaml`](https://github.com/numediart/vsensebox/blob/main/vsensebox/config/detectors/yolo_ultralytics_v8s.yaml).
-
 
 ## 💽 Setup
 
@@ -96,20 +92,24 @@ All requirements are not strictly limited. However, some specific modules might 
     ```
     Now you should see the Configurator GUI like in this scheenshot:
     <img src="https://raw.githubusercontent.com/rathaROG/screenshot/refs/heads/master/VSenseBox/vsensebox_config_gui.jpg">
-  - You can also easily reset the internal configurations by calling the `reset()`. **THIS CAN'T BE REVERSED!** ⚠️
+  - You can also easily reset the internal configurations by calling the `reset()`.
     ```
     vsensebox.reset()
     ```
   - For the details of GUI functions and configurations, check [Configurations page](https://numediart.github.io/vsensebox/vsensebox/config.html).
   - Check the [Examples page](https://numediart.github.io/vsensebox/examples.html) for some real coding!
-* For ***Linux***, if the GUI does not work, you might need to install these:
-  ```
-  sudo apt-get install '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
-  ```
-* For ***Ubuntu on WSL 2***, if the GUI does not work, you need to install these:
-  ```
-  sudo apt-get install libgl1-mesa-glx xdg-utils libegl1
-  ```
+  - ⚠️ `VSenseBox` is set to use GPU by default, and to switch to CPU, you must set `cpu` as string for the parameter `device` in the YAML config file; for example, line #8 in [`yolo_ultralytics_v8s.yaml`](https://github.com/numediart/vsensebox/blob/main/vsensebox/config/detectors/yolo_ultralytics_v8s.yaml).
+
+* If you have GUI related issue:
+  - For ***macOS***, you may try Python 3.11 as suggested in Prerequisite section above.
+  - For ***Linux***, you might need to install these:
+    ```
+    sudo apt-get install '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
+    ```
+  - For ***Ubuntu on WSL 2***, you need to install these:
+    ```
+    sudo apt-get install libgl1-mesa-glx xdg-utils libegl1
+    ```
 
 ## 📢 FYI
 
