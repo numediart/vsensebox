@@ -1,0 +1,1563 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Configurations &#8212; VSenseBox 0.4.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/rtd_sphinx_search.min.css" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=c87aa342"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/rtd_search_config.js"></script>
+    <script src="../_static/js/rtd_sphinx_search.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'vsensebox/config';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Ultilities" href="utils.html" />
+    <link rel="prev" title="Supported Trackers" href="modules/trackers.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.4.1" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">👁️📦 VSenseBox</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getstarted.html">
+    🚀 Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    💡 Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="vsense.html">
+    VSense
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules.html">
+    Supported Modules
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Configurations
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="utils.html">
+    Ultilities
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../releasenotes.html">
+    Release Notes
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/numediart/vsensebox" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getstarted.html">
+    🚀 Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../examples.html">
+    💡 Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="vsense.html">
+    VSense
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules.html">
+    Supported Modules
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Configurations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="utils.html">
+    Ultilities
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../releasenotes.html">
+    Release Notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/numediart/vsensebox" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Configurations</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="configurations">
+<span id="config-page"></span><h1>Configurations<a class="headerlink" href="#configurations" title="Link to this heading">#</a></h1>
+<section id="module-vsensebox.gui.uitools">
+<span id="vsensebox-gui-uitools"></span><h2>vsensebox.gui.uitools<a class="headerlink" href="#module-vsensebox.gui.uitools" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="vsensebox.gui.uitools.config">
+<span class="sig-prename descclassname"><span class="pre">vsensebox.gui.uitools.</span></span><span class="sig-name descname"><span class="pre">config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_yaml</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/gui/uitools.html#config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.gui.uitools.config" title="Link to this definition">#</a></dt>
+<dd><p>Launch GUI configuration tool of VSenseBox.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>config_yaml</strong> (<em>str</em><em>, </em><em>default=None</em>) – Path of YAML config file.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vsensebox.gui.uitools.reset">
+<span class="sig-prename descclassname"><span class="pre">vsensebox.gui.uitools.</span></span><span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/gui/uitools.html#reset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.gui.uitools.reset" title="Link to this definition">#</a></dt>
+<dd><p>Reset the internal configurations.</p>
+</dd></dl>
+
+</section>
+<section id="module-vsensebox.config.configurator">
+<span id="vsensebox-config-configurator"></span><h2>vsensebox.config.configurator<a class="headerlink" href="#module-vsensebox.config.configurator" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.BaseCGF">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">vsensebox.config.configurator.</span></span><span class="sig-name descname"><span class="pre">BaseCGF</span></span><a class="reference internal" href="../_modules/vsensebox/config/configurator.html#BaseCGF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.configurator.BaseCGF" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>An base CFG class used to store the necessary configurations of a module.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.BaseCGF.unified_strings">
+<span class="sig-name descname"><span class="pre">unified_strings</span></span><a class="headerlink" href="#vsensebox.config.configurator.BaseCGF.unified_strings" title="Link to this definition">#</a></dt>
+<dd><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">MyStrings</span></code> object used to store unified strings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>MyStrings, auto</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.BaseCGF.configs">
+<span class="sig-name descname"><span class="pre">configs</span></span><a class="headerlink" href="#vsensebox.config.configurator.BaseCGF.configs" title="Link to this definition">#</a></dt>
+<dd><p>A configuration dictionary of a single document or a list of multiple documents
+of the configurations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict or list[dict], default={}</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.BaseCGF.dumpDoc">
+<span class="sig-name descname"><span class="pre">dumpDoc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/configurator.html#BaseCGF.dumpDoc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.configurator.BaseCGF.dumpDoc" title="Link to this definition">#</a></dt>
+<dd><p>Dump the <a class="reference internal" href="#vsensebox.config.configurator.BaseCGF.configs" title="vsensebox.config.configurator.BaseCGF.configs"><code class="xref py py-attr docutils literal notranslate"><span class="pre">configs</span></code></a> into a YAML file with simple format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>output</strong> (<em>str</em>) – A path file to dump.</p></li>
+<li><p><strong>header</strong> (<em>str</em>) – A file header descriptoin.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.BaseCGF.dumpDocs">
+<span class="sig-name descname"><span class="pre">dumpDocs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/configurator.html#BaseCGF.dumpDocs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.configurator.BaseCGF.dumpDocs" title="Link to this definition">#</a></dt>
+<dd><p>Dump the <a class="reference internal" href="#vsensebox.config.configurator.BaseCGF.configs" title="vsensebox.config.configurator.BaseCGF.configs"><code class="xref py py-attr docutils literal notranslate"><span class="pre">configs</span></code></a> into a YAML file with simple format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>output</strong> (<em>str</em>) – A path file to dump.</p></li>
+<li><p><strong>header</strong> (<em>str</em>) – A file header descriptoin.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.BaseCGF.loadDoc">
+<span class="sig-name descname"><span class="pre">loadDoc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/configurator.html#BaseCGF.loadDoc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.configurator.BaseCGF.loadDoc" title="Link to this definition">#</a></dt>
+<dd><p>Load and set dictionary of a single document from a YAML/JSON file or string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input</strong> (<em>str</em><em> or </em><em>dict</em>) – A YAML/JSON file path, or a raw/ready dictionary.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.BaseCGF.loadDocs">
+<span class="sig-name descname"><span class="pre">loadDocs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/configurator.html#BaseCGF.loadDocs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.configurator.BaseCGF.loadDocs" title="Link to this definition">#</a></dt>
+<dd><p>Load and set a list of multiple documents from a YAML/JSON file or string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input</strong> (<em>str</em><em> or </em><em>dict</em>) – A YAML/JSON file path, or a raw/ready dictionary.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.DCFG_YOLOCLS">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">vsensebox.config.configurator.</span></span><span class="sig-name descname"><span class="pre">DCFG_YOLOCLS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative_to_vsensebox_root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/configurator.html#DCFG_YOLOCLS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.configurator.DCFG_YOLOCLS" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#vsensebox.config.configurator.BaseCGF" title="vsensebox.config.configurator.BaseCGF"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseCGF</span></code></a></p>
+<p>A class used to store the necessary configurations of detector YOLO Classic which
+use <code class="code docutils literal notranslate"><span class="pre">.weights</span></code> model.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.DCFG_YOLOCLS.detector">
+<span class="sig-name descname"><span class="pre">detector</span></span><a class="headerlink" href="#vsensebox.config.configurator.DCFG_YOLOCLS.detector" title="Link to this definition">#</a></dt>
+<dd><p>Configured name of detector YOLO Classic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.DCFG_YOLOCLS.nms">
+<span class="sig-name descname"><span class="pre">nms</span></span><a class="headerlink" href="#vsensebox.config.configurator.DCFG_YOLOCLS.nms" title="Link to this definition">#</a></dt>
+<dd><p>Parameter nms of YOLO Classic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.DCFG_YOLOCLS.conf">
+<span class="sig-name descname"><span class="pre">conf</span></span><a class="headerlink" href="#vsensebox.config.configurator.DCFG_YOLOCLS.conf" title="Link to this definition">#</a></dt>
+<dd><p>Parameter conf of YOLO Classic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.DCFG_YOLOCLS.imgsz">
+<span class="sig-name descname"><span class="pre">imgsz</span></span><a class="headerlink" href="#vsensebox.config.configurator.DCFG_YOLOCLS.imgsz" title="Link to this definition">#</a></dt>
+<dd><p>Input image size of YOLO Classic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.DCFG_YOLOCLS.min_width">
+<span class="sig-name descname"><span class="pre">min_width</span></span><a class="headerlink" href="#vsensebox.config.configurator.DCFG_YOLOCLS.min_width" title="Link to this definition">#</a></dt>
+<dd><p>Minimum width filter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.DCFG_YOLOCLS.classes">
+<span class="sig-name descname"><span class="pre">classes</span></span><a class="headerlink" href="#vsensebox.config.configurator.DCFG_YOLOCLS.classes" title="Link to this definition">#</a></dt>
+<dd><p>Filtering classes of detection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[int, …]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.DCFG_YOLOCLS.class_file">
+<span class="sig-name descname"><span class="pre">class_file</span></span><a class="headerlink" href="#vsensebox.config.configurator.DCFG_YOLOCLS.class_file" title="Link to this definition">#</a></dt>
+<dd><p>Path of coco.names file of YOLO Classic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.DCFG_YOLOCLS.model_cfg_file">
+<span class="sig-name descname"><span class="pre">model_cfg_file</span></span><a class="headerlink" href="#vsensebox.config.configurator.DCFG_YOLOCLS.model_cfg_file" title="Link to this definition">#</a></dt>
+<dd><p>Path of .cfg file of YOLO Classic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.DCFG_YOLOCLS.model_file">
+<span class="sig-name descname"><span class="pre">model_file</span></span><a class="headerlink" href="#vsensebox.config.configurator.DCFG_YOLOCLS.model_file" title="Link to this definition">#</a></dt>
+<dd><p>Path of .weights file of YOLO Classic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.DCFG_YOLOCLS.from_dir">
+<span class="sig-name descname"><span class="pre">from_dir</span></span><a class="headerlink" href="#vsensebox.config.configurator.DCFG_YOLOCLS.from_dir" title="Link to this definition">#</a></dt>
+<dd><p>Path of the root directory, relative to path of <a class="reference internal" href="#vsensebox.config.configurator.DCFG_YOLOCLS.model_file" title="vsensebox.config.configurator.DCFG_YOLOCLS.model_file"><code class="xref py py-attr docutils literal notranslate"><span class="pre">model_file</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.DCFG_YOLOCLS.getDocument">
+<span class="sig-name descname"><span class="pre">getDocument</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/configurator.html#DCFG_YOLOCLS.getDocument"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.configurator.DCFG_YOLOCLS.getDocument" title="Link to this definition">#</a></dt>
+<dd><p>Return a configuration dictionary of a single document of the attributes which
+are the parameters of detector YOLO Classic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A configuration dictionary of a single document of the configurations.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.DCFG_YOLOCLS.set">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/configurator.html#DCFG_YOLOCLS.set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.configurator.DCFG_YOLOCLS.set" title="Link to this definition">#</a></dt>
+<dd><p>Set configurations according to <code class="xref py py-obj docutils literal notranslate"><span class="pre">input</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input</strong> (<em>str</em><em> or </em><em>dict</em>) – A YAML/JSON file path, or a raw/ready dictionary.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.DCFG_YOLOULT">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">vsensebox.config.configurator.</span></span><span class="sig-name descname"><span class="pre">DCFG_YOLOULT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative_to_vsensebox_root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/configurator.html#DCFG_YOLOULT"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.configurator.DCFG_YOLOULT" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#vsensebox.config.configurator.BaseCGF" title="vsensebox.config.configurator.BaseCGF"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseCGF</span></code></a></p>
+<p>A class used to store the necessary configurations of detector Ultralytics.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.DCFG_YOLOULT.detector">
+<span class="sig-name descname"><span class="pre">detector</span></span><a class="headerlink" href="#vsensebox.config.configurator.DCFG_YOLOULT.detector" title="Link to this definition">#</a></dt>
+<dd><p>Configured name of detector YOLO Ultralytics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.DCFG_YOLOULT.conf">
+<span class="sig-name descname"><span class="pre">conf</span></span><a class="headerlink" href="#vsensebox.config.configurator.DCFG_YOLOULT.conf" title="Link to this definition">#</a></dt>
+<dd><p>Parameter conf of YOLO Ultralytics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.DCFG_YOLOULT.iou">
+<span class="sig-name descname"><span class="pre">iou</span></span><a class="headerlink" href="#vsensebox.config.configurator.DCFG_YOLOULT.iou" title="Link to this definition">#</a></dt>
+<dd><p>Parameter iou of YOLO Ultralytics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.DCFG_YOLOULT.imgsz">
+<span class="sig-name descname"><span class="pre">imgsz</span></span><a class="headerlink" href="#vsensebox.config.configurator.DCFG_YOLOULT.imgsz" title="Link to this definition">#</a></dt>
+<dd><p>Parameter imgsz of YOLO Ultralytics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.DCFG_YOLOULT.half">
+<span class="sig-name descname"><span class="pre">half</span></span><a class="headerlink" href="#vsensebox.config.configurator.DCFG_YOLOULT.half" title="Link to this definition">#</a></dt>
+<dd><p>Parameter half of YOLO Ultralytics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.DCFG_YOLOULT.min_width">
+<span class="sig-name descname"><span class="pre">min_width</span></span><a class="headerlink" href="#vsensebox.config.configurator.DCFG_YOLOULT.min_width" title="Link to this definition">#</a></dt>
+<dd><p>Minimum width filter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.DCFG_YOLOULT.classes">
+<span class="sig-name descname"><span class="pre">classes</span></span><a class="headerlink" href="#vsensebox.config.configurator.DCFG_YOLOULT.classes" title="Link to this definition">#</a></dt>
+<dd><p>Parameter classes of YOLO Ultralytics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[int, …]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.DCFG_YOLOULT.device">
+<span class="sig-name descname"><span class="pre">device</span></span><a class="headerlink" href="#vsensebox.config.configurator.DCFG_YOLOULT.device" title="Link to this definition">#</a></dt>
+<dd><p>Parameter of device to compute; for example, 0 or cpu.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.DCFG_YOLOULT.max_det">
+<span class="sig-name descname"><span class="pre">max_det</span></span><a class="headerlink" href="#vsensebox.config.configurator.DCFG_YOLOULT.max_det" title="Link to this definition">#</a></dt>
+<dd><p>Parameter max_det of YOLO Ultralytics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.DCFG_YOLOULT.line_width">
+<span class="sig-name descname"><span class="pre">line_width</span></span><a class="headerlink" href="#vsensebox.config.configurator.DCFG_YOLOULT.line_width" title="Link to this definition">#</a></dt>
+<dd><p>Parameter line_width of YOLO Ultralytics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.DCFG_YOLOULT.model_file">
+<span class="sig-name descname"><span class="pre">model_file</span></span><a class="headerlink" href="#vsensebox.config.configurator.DCFG_YOLOULT.model_file" title="Link to this definition">#</a></dt>
+<dd><p>Path of <a class="reference internal" href="#vsensebox.config.configurator.DCFG_YOLOULT.model_file" title="vsensebox.config.configurator.DCFG_YOLOULT.model_file"><code class="xref py py-attr docutils literal notranslate"><span class="pre">model_file</span></code></a> for YOLO Ultralytics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.DCFG_YOLOULT.from_dir">
+<span class="sig-name descname"><span class="pre">from_dir</span></span><a class="headerlink" href="#vsensebox.config.configurator.DCFG_YOLOULT.from_dir" title="Link to this definition">#</a></dt>
+<dd><p>Path of the root directory, relative to path of <a class="reference internal" href="#vsensebox.config.configurator.DCFG_YOLOULT.model_file" title="vsensebox.config.configurator.DCFG_YOLOULT.model_file"><code class="xref py py-attr docutils literal notranslate"><span class="pre">model_file</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.DCFG_YOLOULT.getDocument">
+<span class="sig-name descname"><span class="pre">getDocument</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/configurator.html#DCFG_YOLOULT.getDocument"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.configurator.DCFG_YOLOULT.getDocument" title="Link to this definition">#</a></dt>
+<dd><p>Return yolout_doc, a configuration dictionary of a single document of the attributes which
+are the parameters of detector YOLO Ultralytics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A configuration dictionary of a single document of the configurations.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.DCFG_YOLOULT.set">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/configurator.html#DCFG_YOLOULT.set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.configurator.DCFG_YOLOULT.set" title="Link to this definition">#</a></dt>
+<dd><p>Set configurations according to <code class="xref py py-obj docutils literal notranslate"><span class="pre">input</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input</strong> (<em>str</em><em> or </em><em>dict</em>) – A YAML/JSON file path, or a raw/ready dictionary.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.TCFG_BasicIoU">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">vsensebox.config.configurator.</span></span><span class="sig-name descname"><span class="pre">TCFG_BasicIoU</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative_to_vsensebox_root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/configurator.html#TCFG_BasicIoU"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.configurator.TCFG_BasicIoU" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#vsensebox.config.configurator.BaseCGF" title="vsensebox.config.configurator.BaseCGF"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseCGF</span></code></a></p>
+<p>A class used to store the necessary configurations of tracker BasicIoU.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.TCFG_BasicIoU.tracker">
+<span class="sig-name descname"><span class="pre">tracker</span></span><a class="headerlink" href="#vsensebox.config.configurator.TCFG_BasicIoU.tracker" title="Link to this definition">#</a></dt>
+<dd><p>Configured name of tracker BasicIoU.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.TCFG_BasicIoU.min_iou">
+<span class="sig-name descname"><span class="pre">min_iou</span></span><a class="headerlink" href="#vsensebox.config.configurator.TCFG_BasicIoU.min_iou" title="Link to this definition">#</a></dt>
+<dd><p>Minimum IoU value for matching.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.TCFG_BasicIoU.device">
+<span class="sig-name descname"><span class="pre">device</span></span><a class="headerlink" href="#vsensebox.config.configurator.TCFG_BasicIoU.device" title="Link to this definition">#</a></dt>
+<dd><p>Device to compute; for example, 0 or cpu.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.TCFG_BasicIoU.getDocument">
+<span class="sig-name descname"><span class="pre">getDocument</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/configurator.html#TCFG_BasicIoU.getDocument"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.configurator.TCFG_BasicIoU.getDocument" title="Link to this definition">#</a></dt>
+<dd><p>Return a configuration dictionary of a single document of the attributes which
+are the parameters of tracker BasicIoU.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A configuration dictionary of a single document of the configurations.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.TCFG_BasicIoU.set">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/configurator.html#TCFG_BasicIoU.set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.configurator.TCFG_BasicIoU.set" title="Link to this definition">#</a></dt>
+<dd><p>Set configurations according to <code class="xref py py-obj docutils literal notranslate"><span class="pre">input</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input</strong> (<em>str</em><em> or </em><em>dict</em>) – A YAML/JSON file path, or a raw/ready dictionary.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.TCFG_Centroid">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">vsensebox.config.configurator.</span></span><span class="sig-name descname"><span class="pre">TCFG_Centroid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative_to_vsensebox_root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/configurator.html#TCFG_Centroid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.configurator.TCFG_Centroid" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#vsensebox.config.configurator.BaseCGF" title="vsensebox.config.configurator.BaseCGF"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseCGF</span></code></a></p>
+<p>A class used to store the necessary configurations of tracker Centroid.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.TCFG_Centroid.tracker">
+<span class="sig-name descname"><span class="pre">tracker</span></span><a class="headerlink" href="#vsensebox.config.configurator.TCFG_Centroid.tracker" title="Link to this definition">#</a></dt>
+<dd><p>Configured name of tracker Centroid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.TCFG_Centroid.max_spread">
+<span class="sig-name descname"><span class="pre">max_spread</span></span><a class="headerlink" href="#vsensebox.config.configurator.TCFG_Centroid.max_spread" title="Link to this definition">#</a></dt>
+<dd><p>Maximum distance of the being tracked <code class="xref py py-class docutils literal notranslate"><span class="pre">Person</span></code> object of previous and current state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.TCFG_Centroid.pref_y">
+<span class="sig-name descname"><span class="pre">pref_y</span></span><a class="headerlink" href="#vsensebox.config.configurator.TCFG_Centroid.pref_y" title="Link to this definition">#</a></dt>
+<dd><p>Prefered Y of represented point; Choices of Top/Center/Bottom.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.TCFG_Centroid.getDocument">
+<span class="sig-name descname"><span class="pre">getDocument</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/configurator.html#TCFG_Centroid.getDocument"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.configurator.TCFG_Centroid.getDocument" title="Link to this definition">#</a></dt>
+<dd><p>Return a configuration dictionary of a single document of the attributes which
+are the parameters of tracker Centroid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A configuration dictionary of a single document of the configurations.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.TCFG_Centroid.set">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/configurator.html#TCFG_Centroid.set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.configurator.TCFG_Centroid.set" title="Link to this definition">#</a></dt>
+<dd><p>Set configurations according to <code class="xref py py-obj docutils literal notranslate"><span class="pre">input</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input</strong> (<em>str</em><em> or </em><em>dict</em>) – A YAML/JSON file path, or a raw/ready dictionary.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.TCFG_DeepSORT">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">vsensebox.config.configurator.</span></span><span class="sig-name descname"><span class="pre">TCFG_DeepSORT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative_to_vsensebox_root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/configurator.html#TCFG_DeepSORT"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.configurator.TCFG_DeepSORT" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#vsensebox.config.configurator.BaseCGF" title="vsensebox.config.configurator.BaseCGF"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseCGF</span></code></a></p>
+<p>A class used to store the necessary configurations of tracker DeepSORT.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.TCFG_DeepSORT.tracker">
+<span class="sig-name descname"><span class="pre">tracker</span></span><a class="headerlink" href="#vsensebox.config.configurator.TCFG_DeepSORT.tracker" title="Link to this definition">#</a></dt>
+<dd><p>Configured name of tracker DeepSORT.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.TCFG_DeepSORT.nn_budget">
+<span class="sig-name descname"><span class="pre">nn_budget</span></span><a class="headerlink" href="#vsensebox.config.configurator.TCFG_DeepSORT.nn_budget" title="Link to this definition">#</a></dt>
+<dd><p>Parameter <a class="reference internal" href="#vsensebox.config.configurator.TCFG_DeepSORT.nn_budget" title="vsensebox.config.configurator.TCFG_DeepSORT.nn_budget"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nn_budget</span></code></a> of tracker DeepSORT.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.TCFG_DeepSORT.batch_size">
+<span class="sig-name descname"><span class="pre">batch_size</span></span><a class="headerlink" href="#vsensebox.config.configurator.TCFG_DeepSORT.batch_size" title="Link to this definition">#</a></dt>
+<dd><p>Parameter <a class="reference internal" href="#vsensebox.config.configurator.TCFG_DeepSORT.batch_size" title="vsensebox.config.configurator.TCFG_DeepSORT.batch_size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">batch_size</span></code></a> of tracker DeepSORT.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.TCFG_DeepSORT.nms_max_overlap">
+<span class="sig-name descname"><span class="pre">nms_max_overlap</span></span><a class="headerlink" href="#vsensebox.config.configurator.TCFG_DeepSORT.nms_max_overlap" title="Link to this definition">#</a></dt>
+<dd><p>Parameter <a class="reference internal" href="#vsensebox.config.configurator.TCFG_DeepSORT.nms_max_overlap" title="vsensebox.config.configurator.TCFG_DeepSORT.nms_max_overlap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nms_max_overlap</span></code></a> of tracker DeepSORT.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.TCFG_DeepSORT.max_cosine_distance">
+<span class="sig-name descname"><span class="pre">max_cosine_distance</span></span><a class="headerlink" href="#vsensebox.config.configurator.TCFG_DeepSORT.max_cosine_distance" title="Link to this definition">#</a></dt>
+<dd><p>Parameter <a class="reference internal" href="#vsensebox.config.configurator.TCFG_DeepSORT.max_cosine_distance" title="vsensebox.config.configurator.TCFG_DeepSORT.max_cosine_distance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max_cosine_distance</span></code></a> of tracker DeepSORT.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.TCFG_DeepSORT.model_file">
+<span class="sig-name descname"><span class="pre">model_file</span></span><a class="headerlink" href="#vsensebox.config.configurator.TCFG_DeepSORT.model_file" title="Link to this definition">#</a></dt>
+<dd><p>Path of model file for tracker DeepSORT.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.TCFG_DeepSORT.from_dir">
+<span class="sig-name descname"><span class="pre">from_dir</span></span><a class="headerlink" href="#vsensebox.config.configurator.TCFG_DeepSORT.from_dir" title="Link to this definition">#</a></dt>
+<dd><p>Path of the root directory, relative to path of <a class="reference internal" href="#vsensebox.config.configurator.TCFG_DeepSORT.model_file" title="vsensebox.config.configurator.TCFG_DeepSORT.model_file"><code class="xref py py-attr docutils literal notranslate"><span class="pre">model_file</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.TCFG_DeepSORT.getDocument">
+<span class="sig-name descname"><span class="pre">getDocument</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/configurator.html#TCFG_DeepSORT.getDocument"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.configurator.TCFG_DeepSORT.getDocument" title="Link to this definition">#</a></dt>
+<dd><p>Return a configuration dictionary of a single document of the attributes which
+are the parameters of tracker DeepSORT.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A configuration dictionary of a single document of the configurations.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.TCFG_DeepSORT.set">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/configurator.html#TCFG_DeepSORT.set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.configurator.TCFG_DeepSORT.set" title="Link to this definition">#</a></dt>
+<dd><p>Set configurations according to <code class="xref py py-obj docutils literal notranslate"><span class="pre">input</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input</strong> (<em>str</em><em> or </em><em>dict</em>) – A YAML/JSON file path, or a raw/ready dictionary.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.TCFG_SORT">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">vsensebox.config.configurator.</span></span><span class="sig-name descname"><span class="pre">TCFG_SORT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative_to_vsensebox_root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/configurator.html#TCFG_SORT"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.configurator.TCFG_SORT" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#vsensebox.config.configurator.BaseCGF" title="vsensebox.config.configurator.BaseCGF"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseCGF</span></code></a></p>
+<p>A class used to store the necessary configurations of tracker SORT.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.TCFG_SORT.tracker">
+<span class="sig-name descname"><span class="pre">tracker</span></span><a class="headerlink" href="#vsensebox.config.configurator.TCFG_SORT.tracker" title="Link to this definition">#</a></dt>
+<dd><p>Configured name of tracker SORT.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.TCFG_SORT.max_age">
+<span class="sig-name descname"><span class="pre">max_age</span></span><a class="headerlink" href="#vsensebox.config.configurator.TCFG_SORT.max_age" title="Link to this definition">#</a></dt>
+<dd><p>Parameter <a class="reference internal" href="#vsensebox.config.configurator.TCFG_SORT.max_age" title="vsensebox.config.configurator.TCFG_SORT.max_age"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max_age</span></code></a> of tracker SORT.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.TCFG_SORT.min_hits">
+<span class="sig-name descname"><span class="pre">min_hits</span></span><a class="headerlink" href="#vsensebox.config.configurator.TCFG_SORT.min_hits" title="Link to this definition">#</a></dt>
+<dd><p>Parameter <a class="reference internal" href="#vsensebox.config.configurator.TCFG_SORT.min_hits" title="vsensebox.config.configurator.TCFG_SORT.min_hits"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min_hits</span></code></a> of tracker SORT.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.TCFG_SORT.iou_threshold">
+<span class="sig-name descname"><span class="pre">iou_threshold</span></span><a class="headerlink" href="#vsensebox.config.configurator.TCFG_SORT.iou_threshold" title="Link to this definition">#</a></dt>
+<dd><p>Parameter <a class="reference internal" href="#vsensebox.config.configurator.TCFG_SORT.iou_threshold" title="vsensebox.config.configurator.TCFG_SORT.iou_threshold"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iou_threshold</span></code></a> of tracker SORT.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.TCFG_SORT.getDocument">
+<span class="sig-name descname"><span class="pre">getDocument</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/configurator.html#TCFG_SORT.getDocument"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.configurator.TCFG_SORT.getDocument" title="Link to this definition">#</a></dt>
+<dd><p>Return a configuration dictionary of a single document of the attributes which
+are the parameters of tracker SORT.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A configuration dictionary of a single document of the configurations.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vsensebox.config.configurator.TCFG_SORT.set">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/configurator.html#TCFG_SORT.set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.configurator.TCFG_SORT.set" title="Link to this definition">#</a></dt>
+<dd><p>Set configurations according to <code class="xref py py-obj docutils literal notranslate"><span class="pre">input</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input</strong> (<em>str</em><em> or </em><em>dict</em>) – A YAML/JSON file path, or a raw/ready dictionary.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-vsensebox.config.confighelper">
+<span id="vsensebox-config-confighelper"></span><h2>vsensebox.config.confighelper<a class="headerlink" href="#module-vsensebox.config.confighelper" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="vsensebox.config.confighelper.dumpDocDict">
+<span class="sig-prename descclassname"><span class="pre">vsensebox.config.confighelper.</span></span><span class="sig-name descname"><span class="pre">dumpDocDict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">doc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/confighelper.html#dumpDocDict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.confighelper.dumpDocDict" title="Link to this definition">#</a></dt>
+<dd><p>Dump a configuration dictionary of a single document into a YAML file
+with simple format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>output_file</strong> (<em>str</em>) – A path file to dump.</p></li>
+<li><p><strong>doc</strong> (<em>dict</em>) – A configuration dictionary of a single document.</p></li>
+<li><p><strong>header</strong> (<em>str</em>) – A file header descriptoin.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vsensebox.config.confighelper.dumpListDocDict">
+<span class="sig-prename descclassname"><span class="pre">vsensebox.config.confighelper.</span></span><span class="sig-name descname"><span class="pre">dumpListDocDict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">doc_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/confighelper.html#dumpListDocDict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.confighelper.dumpListDocDict" title="Link to this definition">#</a></dt>
+<dd><p>Dump a list of YAML dictionary into a YAML file with simple format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>output_file</strong> (<em>str</em>) – A path file to dump.</p></li>
+<li><p><strong>doc_list</strong> (<em>list</em><em>[</em><em>dict</em><em>, </em><em>...</em><em>]</em>) – A list of configuration dictionary.</p></li>
+<li><p><strong>header</strong> (<em>str</em>) – A file header descriptoin.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vsensebox.config.confighelper.getCFGDict">
+<span class="sig-prename descclassname"><span class="pre">vsensebox.config.confighelper.</span></span><span class="sig-name descname"><span class="pre">getCFGDict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/confighelper.html#getCFGDict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.confighelper.getCFGDict" title="Link to this definition">#</a></dt>
+<dd><p>Get a configuration dictionary of a single document from the given <code class="xref py py-obj docutils literal notranslate"><span class="pre">input</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input</strong> (<em>str</em><em> or </em><em>dict</em>) – A YAML/JSON file path, or a raw/ready dictionary.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A configuration dictionary of a single document.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vsensebox.config.confighelper.getListCFGDoc">
+<span class="sig-prename descclassname"><span class="pre">vsensebox.config.confighelper.</span></span><span class="sig-name descname"><span class="pre">getListCFGDoc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/confighelper.html#getListCFGDoc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.confighelper.getListCFGDoc" title="Link to this definition">#</a></dt>
+<dd><p>Get a list of configuration dictionary of document from the given <code class="xref py py-obj docutils literal notranslate"><span class="pre">input</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input</strong> (<em>str</em><em> or </em><em>dict</em>) – A YAML/JSON file path, or a raw/ready dictionary.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of configuration dictionary.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[dict, …]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vsensebox.config.confighelper.isDictString">
+<span class="sig-prename descclassname"><span class="pre">vsensebox.config.confighelper.</span></span><span class="sig-name descname"><span class="pre">isDictString</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_string</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/confighelper.html#isDictString"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.confighelper.isDictString" title="Link to this definition">#</a></dt>
+<dd><p>Check whether the <code class="xref py py-obj docutils literal notranslate"><span class="pre">input_string</span></code> is a valid raw dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input_string</strong> (<em>str</em>) – An input of raw string.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Validation status.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vsensebox.config.confighelper.loadDocument">
+<span class="sig-prename descclassname"><span class="pre">vsensebox.config.confighelper.</span></span><span class="sig-name descname"><span class="pre">loadDocument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yaml_json</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/confighelper.html#loadDocument"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.confighelper.loadDocument" title="Link to this definition">#</a></dt>
+<dd><p>Return a configuration dictionary of a single document from the given file
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">yaml_json</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>yaml_json</strong> (<em>str</em>) – A path of a YAML/JSON file.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A configuration dictionary of a single document.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vsensebox.config.confighelper.loadListDocument">
+<span class="sig-prename descclassname"><span class="pre">vsensebox.config.confighelper.</span></span><span class="sig-name descname"><span class="pre">loadListDocument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yaml_json</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/confighelper.html#loadListDocument"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.confighelper.loadListDocument" title="Link to this definition">#</a></dt>
+<dd><p>Return a list of configuration dictionary from the given file <code class="xref py py-obj docutils literal notranslate"><span class="pre">yaml_json</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>yaml_json</strong> (<em>str</em>) – A path of a YAML/JSON file.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of configuration dictionary.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[dict, …]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vsensebox.config.confighelper.loadRawYAMLString">
+<span class="sig-prename descclassname"><span class="pre">vsensebox.config.confighelper.</span></span><span class="sig-name descname"><span class="pre">loadRawYAMLString</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_string</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/confighelper.html#loadRawYAMLString"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.confighelper.loadRawYAMLString" title="Link to this definition">#</a></dt>
+<dd><p>Return a configuration dictionary of a single document from the given string
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">raw_string</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>raw_string</strong> (<em>str</em>) – A raw string of JSON or YAML; for example,
+<code class="code docutils literal notranslate"><span class="pre">raw_string=&quot;[{'tk_name':</span> <span class="pre">'SORT'}]&quot;</span></code>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A configuration dictionary of a single document.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vsensebox.config.confighelper.loadRawYAMLStringMT">
+<span class="sig-prename descclassname"><span class="pre">vsensebox.config.confighelper.</span></span><span class="sig-name descname"><span class="pre">loadRawYAMLStringMT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_string</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/confighelper.html#loadRawYAMLStringMT"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.confighelper.loadRawYAMLStringMT" title="Link to this definition">#</a></dt>
+<dd><p>Return a list of multiple YAML dictionary from the given string <code class="xref py py-obj docutils literal notranslate"><span class="pre">raw_string</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>raw_string</strong> (<em>str</em>) – A raw string of JSON or YAML; for example,
+<code class="code docutils literal notranslate"><span class="pre">raw_string=&quot;[{'tk_name':</span> <span class="pre">'SORT'},</span> <span class="pre">{'tk_name':</span> <span class="pre">'DeepSORT'}]&quot;</span></code>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of configuration dictionary.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[dict, …]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-vsensebox.config.strings">
+<span id="vsensebox-config-strings"></span><h2>vsensebox.config.strings<a class="headerlink" href="#module-vsensebox.config.strings" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="vsensebox.config.strings.UnifiedStrings">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">vsensebox.config.strings.</span></span><span class="sig-name descname"><span class="pre">UnifiedStrings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strings_yaml</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">DEFAULT_STR_YAML</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/strings.html#UnifiedStrings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.strings.UnifiedStrings" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class used to set up unified strings of VSenseBox based on the internal strings.yaml.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="vsensebox.config.strings.UnifiedStrings.data">
+<span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#vsensebox.config.strings.UnifiedStrings.data" title="Link to this definition">#</a></dt>
+<dd><p>Data or documents read from strings.yaml.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict, auto</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vsensebox.config.strings.UnifiedStrings.getUnifiedFormat">
+<span class="sig-name descname"><span class="pre">getUnifiedFormat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/strings.html#UnifiedStrings.getUnifiedFormat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.strings.UnifiedStrings.getUnifiedFormat" title="Link to this definition">#</a></dt>
+<dd><p>Return a standard unified format string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input_str</strong> (<em>str</em>) – An input string.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A unified format string.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="vsensebox.config.strings.UnifiedStrings.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strings_yaml</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vsensebox/config/strings.html#UnifiedStrings.load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vsensebox.config.strings.UnifiedStrings.load" title="Link to this definition">#</a></dt>
+<dd><p>Load a configuration dictionary of a single document as a dictionary from
+a <code class="xref py py-obj docutils literal notranslate"><span class="pre">strings_yaml</span></code> file and automatically pass to <code class="xref py py-meth docutils literal notranslate"><span class="pre">set()</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>strings_yaml</strong> (<em>str</em>) – A path of a YAML file which stores the unified strings.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="modules/trackers.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Supported Trackers</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="utils.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Ultilities</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-vsensebox.gui.uitools">vsensebox.gui.uitools</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.gui.uitools.config"><code class="docutils literal notranslate"><span class="pre">config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.gui.uitools.reset"><code class="docutils literal notranslate"><span class="pre">reset()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-vsensebox.config.configurator">vsensebox.config.configurator</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.BaseCGF"><code class="docutils literal notranslate"><span class="pre">BaseCGF</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.BaseCGF.unified_strings"><code class="docutils literal notranslate"><span class="pre">BaseCGF.unified_strings</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.BaseCGF.configs"><code class="docutils literal notranslate"><span class="pre">BaseCGF.configs</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.BaseCGF.dumpDoc"><code class="docutils literal notranslate"><span class="pre">BaseCGF.dumpDoc()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.BaseCGF.dumpDocs"><code class="docutils literal notranslate"><span class="pre">BaseCGF.dumpDocs()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.BaseCGF.loadDoc"><code class="docutils literal notranslate"><span class="pre">BaseCGF.loadDoc()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.BaseCGF.loadDocs"><code class="docutils literal notranslate"><span class="pre">BaseCGF.loadDocs()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.DCFG_YOLOCLS"><code class="docutils literal notranslate"><span class="pre">DCFG_YOLOCLS</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.DCFG_YOLOCLS.detector"><code class="docutils literal notranslate"><span class="pre">DCFG_YOLOCLS.detector</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.DCFG_YOLOCLS.nms"><code class="docutils literal notranslate"><span class="pre">DCFG_YOLOCLS.nms</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.DCFG_YOLOCLS.conf"><code class="docutils literal notranslate"><span class="pre">DCFG_YOLOCLS.conf</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.DCFG_YOLOCLS.imgsz"><code class="docutils literal notranslate"><span class="pre">DCFG_YOLOCLS.imgsz</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.DCFG_YOLOCLS.min_width"><code class="docutils literal notranslate"><span class="pre">DCFG_YOLOCLS.min_width</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.DCFG_YOLOCLS.classes"><code class="docutils literal notranslate"><span class="pre">DCFG_YOLOCLS.classes</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.DCFG_YOLOCLS.class_file"><code class="docutils literal notranslate"><span class="pre">DCFG_YOLOCLS.class_file</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.DCFG_YOLOCLS.model_cfg_file"><code class="docutils literal notranslate"><span class="pre">DCFG_YOLOCLS.model_cfg_file</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.DCFG_YOLOCLS.model_file"><code class="docutils literal notranslate"><span class="pre">DCFG_YOLOCLS.model_file</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.DCFG_YOLOCLS.from_dir"><code class="docutils literal notranslate"><span class="pre">DCFG_YOLOCLS.from_dir</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.DCFG_YOLOCLS.getDocument"><code class="docutils literal notranslate"><span class="pre">DCFG_YOLOCLS.getDocument()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.DCFG_YOLOCLS.set"><code class="docutils literal notranslate"><span class="pre">DCFG_YOLOCLS.set()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.DCFG_YOLOULT"><code class="docutils literal notranslate"><span class="pre">DCFG_YOLOULT</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.DCFG_YOLOULT.detector"><code class="docutils literal notranslate"><span class="pre">DCFG_YOLOULT.detector</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.DCFG_YOLOULT.conf"><code class="docutils literal notranslate"><span class="pre">DCFG_YOLOULT.conf</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.DCFG_YOLOULT.iou"><code class="docutils literal notranslate"><span class="pre">DCFG_YOLOULT.iou</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.DCFG_YOLOULT.imgsz"><code class="docutils literal notranslate"><span class="pre">DCFG_YOLOULT.imgsz</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.DCFG_YOLOULT.half"><code class="docutils literal notranslate"><span class="pre">DCFG_YOLOULT.half</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.DCFG_YOLOULT.min_width"><code class="docutils literal notranslate"><span class="pre">DCFG_YOLOULT.min_width</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.DCFG_YOLOULT.classes"><code class="docutils literal notranslate"><span class="pre">DCFG_YOLOULT.classes</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.DCFG_YOLOULT.device"><code class="docutils literal notranslate"><span class="pre">DCFG_YOLOULT.device</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.DCFG_YOLOULT.max_det"><code class="docutils literal notranslate"><span class="pre">DCFG_YOLOULT.max_det</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.DCFG_YOLOULT.line_width"><code class="docutils literal notranslate"><span class="pre">DCFG_YOLOULT.line_width</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.DCFG_YOLOULT.model_file"><code class="docutils literal notranslate"><span class="pre">DCFG_YOLOULT.model_file</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.DCFG_YOLOULT.from_dir"><code class="docutils literal notranslate"><span class="pre">DCFG_YOLOULT.from_dir</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.DCFG_YOLOULT.getDocument"><code class="docutils literal notranslate"><span class="pre">DCFG_YOLOULT.getDocument()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.DCFG_YOLOULT.set"><code class="docutils literal notranslate"><span class="pre">DCFG_YOLOULT.set()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.TCFG_BasicIoU"><code class="docutils literal notranslate"><span class="pre">TCFG_BasicIoU</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.TCFG_BasicIoU.tracker"><code class="docutils literal notranslate"><span class="pre">TCFG_BasicIoU.tracker</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.TCFG_BasicIoU.min_iou"><code class="docutils literal notranslate"><span class="pre">TCFG_BasicIoU.min_iou</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.TCFG_BasicIoU.device"><code class="docutils literal notranslate"><span class="pre">TCFG_BasicIoU.device</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.TCFG_BasicIoU.getDocument"><code class="docutils literal notranslate"><span class="pre">TCFG_BasicIoU.getDocument()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.TCFG_BasicIoU.set"><code class="docutils literal notranslate"><span class="pre">TCFG_BasicIoU.set()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.TCFG_Centroid"><code class="docutils literal notranslate"><span class="pre">TCFG_Centroid</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.TCFG_Centroid.tracker"><code class="docutils literal notranslate"><span class="pre">TCFG_Centroid.tracker</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.TCFG_Centroid.max_spread"><code class="docutils literal notranslate"><span class="pre">TCFG_Centroid.max_spread</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.TCFG_Centroid.pref_y"><code class="docutils literal notranslate"><span class="pre">TCFG_Centroid.pref_y</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.TCFG_Centroid.getDocument"><code class="docutils literal notranslate"><span class="pre">TCFG_Centroid.getDocument()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.TCFG_Centroid.set"><code class="docutils literal notranslate"><span class="pre">TCFG_Centroid.set()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.TCFG_DeepSORT"><code class="docutils literal notranslate"><span class="pre">TCFG_DeepSORT</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.TCFG_DeepSORT.tracker"><code class="docutils literal notranslate"><span class="pre">TCFG_DeepSORT.tracker</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.TCFG_DeepSORT.nn_budget"><code class="docutils literal notranslate"><span class="pre">TCFG_DeepSORT.nn_budget</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.TCFG_DeepSORT.batch_size"><code class="docutils literal notranslate"><span class="pre">TCFG_DeepSORT.batch_size</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.TCFG_DeepSORT.nms_max_overlap"><code class="docutils literal notranslate"><span class="pre">TCFG_DeepSORT.nms_max_overlap</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.TCFG_DeepSORT.max_cosine_distance"><code class="docutils literal notranslate"><span class="pre">TCFG_DeepSORT.max_cosine_distance</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.TCFG_DeepSORT.model_file"><code class="docutils literal notranslate"><span class="pre">TCFG_DeepSORT.model_file</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.TCFG_DeepSORT.from_dir"><code class="docutils literal notranslate"><span class="pre">TCFG_DeepSORT.from_dir</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.TCFG_DeepSORT.getDocument"><code class="docutils literal notranslate"><span class="pre">TCFG_DeepSORT.getDocument()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.TCFG_DeepSORT.set"><code class="docutils literal notranslate"><span class="pre">TCFG_DeepSORT.set()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.TCFG_SORT"><code class="docutils literal notranslate"><span class="pre">TCFG_SORT</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.TCFG_SORT.tracker"><code class="docutils literal notranslate"><span class="pre">TCFG_SORT.tracker</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.TCFG_SORT.max_age"><code class="docutils literal notranslate"><span class="pre">TCFG_SORT.max_age</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.TCFG_SORT.min_hits"><code class="docutils literal notranslate"><span class="pre">TCFG_SORT.min_hits</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.TCFG_SORT.iou_threshold"><code class="docutils literal notranslate"><span class="pre">TCFG_SORT.iou_threshold</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.TCFG_SORT.getDocument"><code class="docutils literal notranslate"><span class="pre">TCFG_SORT.getDocument()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.configurator.TCFG_SORT.set"><code class="docutils literal notranslate"><span class="pre">TCFG_SORT.set()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-vsensebox.config.confighelper">vsensebox.config.confighelper</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.confighelper.dumpDocDict"><code class="docutils literal notranslate"><span class="pre">dumpDocDict()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.confighelper.dumpListDocDict"><code class="docutils literal notranslate"><span class="pre">dumpListDocDict()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.confighelper.getCFGDict"><code class="docutils literal notranslate"><span class="pre">getCFGDict()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.confighelper.getListCFGDoc"><code class="docutils literal notranslate"><span class="pre">getListCFGDoc()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.confighelper.isDictString"><code class="docutils literal notranslate"><span class="pre">isDictString()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.confighelper.loadDocument"><code class="docutils literal notranslate"><span class="pre">loadDocument()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.confighelper.loadListDocument"><code class="docutils literal notranslate"><span class="pre">loadListDocument()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.confighelper.loadRawYAMLString"><code class="docutils literal notranslate"><span class="pre">loadRawYAMLString()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.confighelper.loadRawYAMLStringMT"><code class="docutils literal notranslate"><span class="pre">loadRawYAMLStringMT()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-vsensebox.config.strings">vsensebox.config.strings</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.strings.UnifiedStrings"><code class="docutils literal notranslate"><span class="pre">UnifiedStrings</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.strings.UnifiedStrings.data"><code class="docutils literal notranslate"><span class="pre">UnifiedStrings.data</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.strings.UnifiedStrings.getUnifiedFormat"><code class="docutils literal notranslate"><span class="pre">UnifiedStrings.getUnifiedFormat()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vsensebox.config.strings.UnifiedStrings.load"><code class="docutils literal notranslate"><span class="pre">UnifiedStrings.load()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, UMONS-Numediart, Ratha SIV.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

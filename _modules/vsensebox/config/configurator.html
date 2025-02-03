@@ -1,0 +1,1165 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vsensebox.config.configurator &#8212; VSenseBox 0.4.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/rtd_sphinx_search.min.css" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=c87aa342"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/rtd_search_config.js"></script>
+    <script src="../../../_static/js/rtd_sphinx_search.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/vsensebox/config/configurator';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.4.1" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">👁️📦 VSenseBox</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../getstarted.html">
+    🚀 Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../examples.html">
+    💡 Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../vsensebox/vsense.html">
+    VSense
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../vsensebox/modules.html">
+    Supported Modules
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../vsensebox/config.html">
+    Configurations
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../vsensebox/utils.html">
+    Ultilities
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../releasenotes.html">
+    Release Notes
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/numediart/vsensebox" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../getstarted.html">
+    🚀 Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../examples.html">
+    💡 Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../vsensebox/vsense.html">
+    VSense
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../vsensebox/modules.html">
+    Supported Modules
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../vsensebox/config.html">
+    Configurations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../vsensebox/utils.html">
+    Ultilities
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../releasenotes.html">
+    Release Notes
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/numediart/vsensebox" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">vsensebox.config.configurator</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for vsensebox.config.configurator</h1><div class="highlight"><pre>
+<span></span><span class="c1"># VSenseBox - Python toolbox for visual sensing</span>
+<span class="c1"># GNU General Public License v3 or later (GPLv3+)</span>
+<span class="c1"># Copyright (C) 2024 UMONS-Numediart</span>
+
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">.strings</span><span class="w"> </span><span class="kn">import</span> <span class="n">USTR</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.confighelper</span><span class="w"> </span><span class="kn">import</span> <span class="n">getCFGDict</span><span class="p">,</span> <span class="n">getListCFGDoc</span><span class="p">,</span> <span class="n">dumpDocDict</span><span class="p">,</span> <span class="n">dumpListDocDict</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">vsensebox.utils.logtools</span><span class="w"> </span><span class="kn">import</span> <span class="n">add_warning_log</span><span class="p">,</span> <span class="n">add_error_log</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">vsensebox.utils.commontools</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span><span class="n">joinFPathFull</span><span class="p">,</span> <span class="n">getGlobalRootDir</span><span class="p">,</span> 
+                                         <span class="n">getAdaptiveAbsPathFDS</span><span class="p">,</span> <span class="n">normalizePathFDS</span><span class="p">)</span>
+
+<span class="n">IN_ROOT_DIR</span> <span class="o">=</span> <span class="n">getGlobalRootDir</span><span class="p">()</span>
+<span class="n">IN_DATA_DIR</span> <span class="o">=</span> <span class="n">joinFPathFull</span><span class="p">(</span><span class="n">IN_ROOT_DIR</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">)</span>
+<span class="n">IN_CONFIG_DIR</span> <span class="o">=</span> <span class="n">joinFPathFull</span><span class="p">(</span><span class="n">IN_ROOT_DIR</span><span class="p">,</span> <span class="s1">&#39;config&#39;</span><span class="p">)</span>
+<span class="n">DET_CONFIG_DIR</span> <span class="o">=</span> <span class="n">joinFPathFull</span><span class="p">(</span><span class="n">IN_CONFIG_DIR</span><span class="p">,</span> <span class="s1">&#39;detectors&#39;</span><span class="p">)</span>
+<span class="n">TRK_CONFIG_DIR</span> <span class="o">=</span> <span class="n">joinFPathFull</span><span class="p">(</span><span class="n">IN_CONFIG_DIR</span><span class="p">,</span> <span class="s1">&#39;trackers&#39;</span><span class="p">)</span>
+<span class="n">STR_CONFIG_DIR</span> <span class="o">=</span> <span class="n">joinFPathFull</span><span class="p">(</span><span class="n">IN_CONFIG_DIR</span><span class="p">,</span> <span class="s1">&#39;strings&#39;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="BaseCGF">
+<a class="viewcode-back" href="../../../vsensebox/config.html#vsensebox.config.configurator.BaseCGF">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BaseCGF</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    An base CFG class used to store the necessary configurations of a module.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    unified_strings : MyStrings, auto</span>
+<span class="sd">        A :class:`MyStrings` object used to store unified strings.</span>
+<span class="sd">    configs : dict or list[dict], default={}</span>
+<span class="sd">        A configuration dictionary of a single document or a list of multiple documents </span>
+<span class="sd">        of the configurations.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">unified_strings</span> <span class="o">=</span> <span class="n">USTR</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">configs</span> <span class="o">=</span> <span class="p">{}</span>
+    
+<div class="viewcode-block" id="BaseCGF.loadDoc">
+<a class="viewcode-back" href="../../../vsensebox/config.html#vsensebox.config.configurator.BaseCGF.loadDoc">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">loadDoc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Load and set dictionary of a single document from a YAML/JSON file or string.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        input : str or dict</span>
+<span class="sd">            A YAML/JSON file path, or a raw/ready dictionary.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">configs</span> <span class="o">=</span> <span class="n">getCFGDict</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span></div>
+
+    
+<div class="viewcode-block" id="BaseCGF.loadDocs">
+<a class="viewcode-back" href="../../../vsensebox/config.html#vsensebox.config.configurator.BaseCGF.loadDocs">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">loadDocs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Load and set a list of multiple documents from a YAML/JSON file or string.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        input : str or dict</span>
+<span class="sd">            A YAML/JSON file path, or a raw/ready dictionary.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">configs</span> <span class="o">=</span> <span class="n">getListCFGDoc</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span></div>
+
+    
+<div class="viewcode-block" id="BaseCGF.dumpDoc">
+<a class="viewcode-back" href="../../../vsensebox/config.html#vsensebox.config.configurator.BaseCGF.dumpDoc">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">dumpDoc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Dump the :attr:`configs` into a YAML file with simple format.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        output : str</span>
+<span class="sd">            A path file to dump.</span>
+<span class="sd">        header : str</span>
+<span class="sd">            A file header descriptoin.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">dumpDocDict</span><span class="p">(</span><span class="n">output_file</span><span class="o">=</span><span class="n">output</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">header</span><span class="p">)</span></div>
+
+    
+<div class="viewcode-block" id="BaseCGF.dumpDocs">
+<a class="viewcode-back" href="../../../vsensebox/config.html#vsensebox.config.configurator.BaseCGF.dumpDocs">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">dumpDocs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Dump the :attr:`configs` into a YAML file with simple format.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        output : str</span>
+<span class="sd">            A path file to dump.</span>
+<span class="sd">        header : str</span>
+<span class="sd">            A file header descriptoin.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">dumpListDocDict</span><span class="p">(</span><span class="n">output_file</span><span class="o">=</span><span class="n">output</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">header</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="DCFG_YOLOCLS">
+<a class="viewcode-back" href="../../../vsensebox/config.html#vsensebox.config.configurator.DCFG_YOLOCLS">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">DCFG_YOLOCLS</span><span class="p">(</span><span class="n">BaseCGF</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A class used to store the necessary configurations of detector YOLO Classic which </span>
+<span class="sd">    use :code:`.weights` model.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    detector : str</span>
+<span class="sd">        Configured name of detector YOLO Classic.</span>
+<span class="sd">    nms : float</span>
+<span class="sd">        Parameter nms of YOLO Classic.</span>
+<span class="sd">    conf : float</span>
+<span class="sd">        Parameter conf of YOLO Classic.</span>
+<span class="sd">    imgsz : int</span>
+<span class="sd">        Input image size of YOLO Classic.</span>
+<span class="sd">    min_width : int</span>
+<span class="sd">        Minimum width filter.</span>
+<span class="sd">    classes : list[int, ...]</span>
+<span class="sd">        Filtering classes of detection.</span>
+<span class="sd">    class_file : str</span>
+<span class="sd">        Path of coco.names file of YOLO Classic.</span>
+<span class="sd">    model_cfg_file : str</span>
+<span class="sd">        Path of .cfg file of YOLO Classic.</span>
+<span class="sd">    model_file : str</span>
+<span class="sd">        Path of .weights file of YOLO Classic.</span>
+<span class="sd">    from_dir : str</span>
+<span class="sd">        Path of the root directory, relative to path of :attr:`model_file`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">relative_to_vsensebox_root</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize the class according to the :obj:`relative_to_vsensebox_root` which defines </span>
+<span class="sd">        whether all the paths inside your configuration file are relative to :code:`{vsensebox root}` </span>
+<span class="sd">        or not. If all the paths inside your configuration file have full absolute paths, </span>
+<span class="sd">        setting :obj:`relative_to_vsensebox_root` is optional.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        cfg : str or dict</span>
+<span class="sd">            A YAML/JSON file path, or a raw/ready dictionary.</span>
+<span class="sd">        relative_to_vsensebox_root : bool, default=False</span>
+<span class="sd">            (1) Set :code:`relative_to_vsensebox_root=False` to use your current working directory </span>
+<span class="sd">            as where all the paths in your configuration file are relative to; for example, </span>
+<span class="sd">            the path of :attr:`model_file` inside your configuration file is set relatively </span>
+<span class="sd">            to your current working directory. </span>
+<span class="sd">            (2) Set :code:`relative_to_vsensebox_root=True` when all the paths in your configuration </span>
+<span class="sd">            file are relative to :code:`{vsensebox root}`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">from_dir</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">relative_to_vsensebox_root</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">from_dir</span> <span class="o">=</span> <span class="n">IN_ROOT_DIR</span>
+        <span class="k">if</span> <span class="n">cfg</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
+
+<div class="viewcode-block" id="DCFG_YOLOCLS.set">
+<a class="viewcode-back" href="../../../vsensebox/config.html#vsensebox.config.configurator.DCFG_YOLOCLS.set">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set configurations according to :obj:`input`.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        input : str or dict</span>
+<span class="sd">            A YAML/JSON file path, or a raw/ready dictionary.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">loadDoc</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">detector</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">unified_strings</span><span class="o">.</span><span class="n">getUnifiedFormat</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;detector&#39;</span><span class="p">])</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">nms</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;nms&#39;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">conf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;conf&#39;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">imgsz</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;imgsz&#39;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">min_width</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;min_width&#39;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">classes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;classes&#39;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">class_file</span> <span class="o">=</span> <span class="n">getAdaptiveAbsPathFDS</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">from_dir</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;class_file&#39;</span><span class="p">])</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">model_cfg_file</span> <span class="o">=</span> <span class="n">getAdaptiveAbsPathFDS</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">from_dir</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;model_cfg_file&#39;</span><span class="p">])</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">model_file</span> <span class="o">=</span> <span class="n">getAdaptiveAbsPathFDS</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">from_dir</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;model_file&#39;</span><span class="p">])</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">configs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getDocument</span><span class="p">()</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;DCFG_YOLOCLS : set() -&gt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+                <span class="n">add_error_log</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">add_warning_log</span><span class="p">(</span><span class="s2">&quot;DCFG_YOLOCLS : set() -&gt; The configuration is empty.&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="DCFG_YOLOCLS.getDocument">
+<a class="viewcode-back" href="../../../vsensebox/config.html#vsensebox.config.configurator.DCFG_YOLOCLS.getDocument">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getDocument</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a configuration dictionary of a single document of the attributes which </span>
+<span class="sd">        are the parameters of detector YOLO Classic.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        dict</span>
+<span class="sd">            A configuration dictionary of a single document of the configurations.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">yolocs_doc</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;detector&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">detector</span><span class="p">,</span>
+            <span class="s2">&quot;nms&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">nms</span><span class="p">,</span>
+            <span class="s2">&quot;conf&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">conf</span><span class="p">,</span>
+            <span class="s2">&quot;imgsz&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">imgsz</span><span class="p">,</span>
+            <span class="s2">&quot;min_width&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_width</span><span class="p">,</span>
+            <span class="s2">&quot;classes&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">classes</span><span class="p">,</span>
+            <span class="s2">&quot;class_file&quot;</span><span class="p">:</span> <span class="n">normalizePathFDS</span><span class="p">(</span><span class="n">IN_ROOT_DIR</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">class_file</span><span class="p">),</span>
+            <span class="s2">&quot;model_cfg_file&quot;</span><span class="p">:</span> <span class="n">normalizePathFDS</span><span class="p">(</span><span class="n">IN_ROOT_DIR</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_cfg_file</span><span class="p">),</span>
+            <span class="s2">&quot;model_file&quot;</span><span class="p">:</span> <span class="n">normalizePathFDS</span><span class="p">(</span><span class="n">IN_ROOT_DIR</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_file</span><span class="p">),</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">yolocs_doc</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="DCFG_YOLOULT">
+<a class="viewcode-back" href="../../../vsensebox/config.html#vsensebox.config.configurator.DCFG_YOLOULT">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">DCFG_YOLOULT</span><span class="p">(</span><span class="n">BaseCGF</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A class used to store the necessary configurations of detector Ultralytics.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    detector : str</span>
+<span class="sd">        Configured name of detector YOLO Ultralytics.</span>
+<span class="sd">    conf : float</span>
+<span class="sd">        Parameter conf of YOLO Ultralytics.</span>
+<span class="sd">    iou : float</span>
+<span class="sd">        Parameter iou of YOLO Ultralytics.</span>
+<span class="sd">    imgsz : int</span>
+<span class="sd">        Parameter imgsz of YOLO Ultralytics.</span>
+<span class="sd">    half : bool</span>
+<span class="sd">        Parameter half of YOLO Ultralytics.</span>
+<span class="sd">    min_width : int</span>
+<span class="sd">        Minimum width filter.</span>
+<span class="sd">    classes : list[int, ...]</span>
+<span class="sd">        Parameter classes of YOLO Ultralytics.</span>
+<span class="sd">    device : str</span>
+<span class="sd">        Parameter of device to compute; for example, 0 or cpu.</span>
+<span class="sd">    max_det : int</span>
+<span class="sd">        Parameter max_det of YOLO Ultralytics.</span>
+<span class="sd">    line_width : int</span>
+<span class="sd">        Parameter line_width of YOLO Ultralytics.</span>
+<span class="sd">    model_file : str</span>
+<span class="sd">        Path of :attr:`model_file` for YOLO Ultralytics.</span>
+<span class="sd">    from_dir : str</span>
+<span class="sd">        Path of the root directory, relative to path of :attr:`model_file`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">relative_to_vsensebox_root</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize the class according to the :obj:`relative_to_vsensebox_root` which </span>
+<span class="sd">        defines whether all the paths inside your configuration file are relative to </span>
+<span class="sd">        :code:`{vsensebox root}` or not. If all the paths inside your configuration file have </span>
+<span class="sd">        full absolute paths, setting :obj:`relative_to_vsensebox_root` is optional.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        cfg : str or dict</span>
+<span class="sd">            A YAML/JSON file path, or a raw/ready dictionary.</span>
+<span class="sd">        relative_to_vsensebox_root : bool, default=False</span>
+<span class="sd">            (1) Set :code:`relative_to_vsensebox_root=False` to use your current working </span>
+<span class="sd">            directory as where all the paths in your configuration file are relative to; </span>
+<span class="sd">            for example, the path of :attr:`model_file` inside your configuration file is </span>
+<span class="sd">            set relatively to your current working directory. </span>
+<span class="sd">            (2) Set :code:`relative_to_vsensebox_root=True` when all the paths in your </span>
+<span class="sd">            configuration file are relative to :code:{vsensebox root}.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">from_dir</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">relative_to_vsensebox_root</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">from_dir</span> <span class="o">=</span> <span class="n">IN_ROOT_DIR</span>
+        <span class="k">if</span> <span class="n">cfg</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
+
+<div class="viewcode-block" id="DCFG_YOLOULT.set">
+<a class="viewcode-back" href="../../../vsensebox/config.html#vsensebox.config.configurator.DCFG_YOLOULT.set">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set configurations according to :obj:`input`.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        input : str or dict</span>
+<span class="sd">            A YAML/JSON file path, or a raw/ready dictionary.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">loadDoc</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">detector</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">unified_strings</span><span class="o">.</span><span class="n">getUnifiedFormat</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;detector&#39;</span><span class="p">])</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">conf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;conf&#39;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">iou</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;iou&#39;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">imgsz</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;imgsz&#39;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">half</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;half&#39;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">min_width</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;min_width&#39;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">classes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;classes&#39;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;device&#39;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">max_det</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;max_det&#39;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">line_width</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;line_width&#39;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">model_file</span> <span class="o">=</span> <span class="n">getAdaptiveAbsPathFDS</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">from_dir</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;model_file&#39;</span><span class="p">])</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">configs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getDocument</span><span class="p">()</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;DCFG_YOLOULT : set() -&gt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+                <span class="n">add_error_log</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">add_warning_log</span><span class="p">(</span><span class="s2">&quot;DCFG_YOLOULT : set() -&gt; The configuration is empty.&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="DCFG_YOLOULT.getDocument">
+<a class="viewcode-back" href="../../../vsensebox/config.html#vsensebox.config.configurator.DCFG_YOLOULT.getDocument">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getDocument</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return yolout_doc, a configuration dictionary of a single document of the attributes which </span>
+<span class="sd">        are the parameters of detector YOLO Ultralytics.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        dict</span>
+<span class="sd">            A configuration dictionary of a single document of the configurations.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">yolout_doc</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;detector&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">detector</span><span class="p">,</span>
+            <span class="s2">&quot;conf&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">conf</span><span class="p">,</span>
+            <span class="s2">&quot;iou&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">iou</span><span class="p">,</span>
+            <span class="s2">&quot;imgsz&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">imgsz</span><span class="p">,</span>
+            <span class="s2">&quot;half&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">half</span><span class="p">,</span>
+            <span class="s2">&quot;min_width&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_width</span><span class="p">,</span>
+            <span class="s2">&quot;classes&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">classes</span><span class="p">,</span>
+            <span class="s2">&quot;device&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">,</span>
+            <span class="s2">&quot;max_det&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_det</span><span class="p">,</span>
+            <span class="s2">&quot;line_width&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">line_width</span><span class="p">,</span>
+            <span class="s2">&quot;model_file&quot;</span><span class="p">:</span> <span class="n">normalizePathFDS</span><span class="p">(</span><span class="n">IN_ROOT_DIR</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_file</span><span class="p">),</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">yolout_doc</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="TCFG_Centroid">
+<a class="viewcode-back" href="../../../vsensebox/config.html#vsensebox.config.configurator.TCFG_Centroid">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">TCFG_Centroid</span><span class="p">(</span><span class="n">BaseCGF</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A class used to store the necessary configurations of tracker Centroid.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    tracker : str</span>
+<span class="sd">        Configured name of tracker Centroid.</span>
+<span class="sd">    max_spread : int</span>
+<span class="sd">        Maximum distance of the being tracked :class:`Person` object of previous and current state.</span>
+<span class="sd">    pref_y : str</span>
+<span class="sd">        Prefered Y of represented point; Choices of Top/Center/Bottom.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">relative_to_vsensebox_root</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize the class.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        cfg : str or dict</span>
+<span class="sd">            A YAML/JSON file path, or a raw/ready dictionary.</span>
+<span class="sd">        relative_to_vsensebox_root : bool, default=False</span>
+<span class="sd">            Being consistent with others, will be ignored.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">from_dir</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">relative_to_vsensebox_root</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">from_dir</span> <span class="o">=</span> <span class="n">IN_ROOT_DIR</span>
+        <span class="k">if</span> <span class="n">cfg</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
+
+<div class="viewcode-block" id="TCFG_Centroid.set">
+<a class="viewcode-back" href="../../../vsensebox/config.html#vsensebox.config.configurator.TCFG_Centroid.set">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set configurations according to :obj:`input`.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        input : str or dict</span>
+<span class="sd">            A YAML/JSON file path, or a raw/ready dictionary.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">loadDoc</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">tracker</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">unified_strings</span><span class="o">.</span><span class="n">getUnifiedFormat</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;tracker&#39;</span><span class="p">])</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">max_spread</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;max_spread&#39;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">pref_y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;pref_y&#39;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">configs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getDocument</span><span class="p">()</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;TCFG_Centroid : set() -&gt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+                <span class="n">add_error_log</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">add_warning_log</span><span class="p">(</span><span class="s2">&quot;TCFG_Centroid : set() -&gt; The configuration is empty.&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="TCFG_Centroid.getDocument">
+<a class="viewcode-back" href="../../../vsensebox/config.html#vsensebox.config.configurator.TCFG_Centroid.getDocument">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getDocument</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a configuration dictionary of a single document of the attributes which </span>
+<span class="sd">        are the parameters of tracker Centroid.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        dict</span>
+<span class="sd">            A configuration dictionary of a single document of the configurations.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">centroid_doc</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;tracker&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">tracker</span><span class="p">,</span>
+            <span class="s2">&quot;max_spread&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_spread</span><span class="p">,</span>
+            <span class="s2">&quot;pref_y&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pref_y</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">centroid_doc</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="TCFG_BasicIoU">
+<a class="viewcode-back" href="../../../vsensebox/config.html#vsensebox.config.configurator.TCFG_BasicIoU">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">TCFG_BasicIoU</span><span class="p">(</span><span class="n">BaseCGF</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A class used to store the necessary configurations of tracker BasicIoU.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    tracker : str</span>
+<span class="sd">        Configured name of tracker BasicIoU.</span>
+<span class="sd">    min_iou : float</span>
+<span class="sd">        Minimum IoU value for matching.</span>
+<span class="sd">    device : str</span>
+<span class="sd">        Device to compute; for example, 0 or cpu.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">relative_to_vsensebox_root</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize the class.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        cfg : str or dict</span>
+<span class="sd">            A YAML/JSON file path, or a raw/ready dictionary.</span>
+<span class="sd">        relative_to_vsensebox_root : bool, default=False</span>
+<span class="sd">            Being consistent with others, will be ignored.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">from_dir</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">relative_to_vsensebox_root</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">from_dir</span> <span class="o">=</span> <span class="n">IN_ROOT_DIR</span>
+        <span class="k">if</span> <span class="n">cfg</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
+
+<div class="viewcode-block" id="TCFG_BasicIoU.set">
+<a class="viewcode-back" href="../../../vsensebox/config.html#vsensebox.config.configurator.TCFG_BasicIoU.set">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set configurations according to :obj:`input`.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        input : str or dict</span>
+<span class="sd">            A YAML/JSON file path, or a raw/ready dictionary.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">loadDoc</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">tracker</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">unified_strings</span><span class="o">.</span><span class="n">getUnifiedFormat</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;tracker&#39;</span><span class="p">])</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">min_iou</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;min_iou&#39;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;device&#39;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">configs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getDocument</span><span class="p">()</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;TCFG_BasicIoU : set() -&gt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+                <span class="n">add_error_log</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">add_warning_log</span><span class="p">(</span><span class="s2">&quot;TCFG_BasicIoU : set() -&gt; The configuration is empty.&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="TCFG_BasicIoU.getDocument">
+<a class="viewcode-back" href="../../../vsensebox/config.html#vsensebox.config.configurator.TCFG_BasicIoU.getDocument">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getDocument</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a configuration dictionary of a single document of the attributes which </span>
+<span class="sd">        are the parameters of tracker BasicIoU.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        dict</span>
+<span class="sd">            A configuration dictionary of a single document of the configurations.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">basiciou_doc</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;tracker&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">tracker</span><span class="p">,</span>
+            <span class="s2">&quot;min_iou&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_iou</span><span class="p">,</span>
+            <span class="s2">&quot;device&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">device</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">basiciou_doc</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="TCFG_SORT">
+<a class="viewcode-back" href="../../../vsensebox/config.html#vsensebox.config.configurator.TCFG_SORT">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">TCFG_SORT</span><span class="p">(</span><span class="n">BaseCGF</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A class used to store the necessary configurations of tracker SORT.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    tracker : str</span>
+<span class="sd">        Configured name of tracker SORT.</span>
+<span class="sd">    max_age : int</span>
+<span class="sd">        Parameter :obj:`max_age` of tracker SORT.</span>
+<span class="sd">    min_hits : int</span>
+<span class="sd">        Parameter :obj:`min_hits` of tracker SORT.</span>
+<span class="sd">    iou_threshold : float</span>
+<span class="sd">        Parameter :obj:`iou_threshold` of tracker SORT.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">relative_to_vsensebox_root</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize the class.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        cfg : str or dict</span>
+<span class="sd">            A YAML/JSON file path, or a raw/ready dictionary.</span>
+<span class="sd">        relative_to_vsensebox_root : bool, default=False</span>
+<span class="sd">            Being consistent with others, will be ignored.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">from_dir</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">relative_to_vsensebox_root</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">from_dir</span> <span class="o">=</span> <span class="n">IN_ROOT_DIR</span>
+        <span class="k">if</span> <span class="n">cfg</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
+
+<div class="viewcode-block" id="TCFG_SORT.set">
+<a class="viewcode-back" href="../../../vsensebox/config.html#vsensebox.config.configurator.TCFG_SORT.set">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set configurations according to :obj:`input`.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        input : str or dict</span>
+<span class="sd">            A YAML/JSON file path, or a raw/ready dictionary.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">loadDoc</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">tracker</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">unified_strings</span><span class="o">.</span><span class="n">getUnifiedFormat</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;tracker&#39;</span><span class="p">])</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">max_age</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;max_age&#39;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">min_hits</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;min_hits&#39;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">iou_threshold</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;iou_threshold&#39;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">configs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getDocument</span><span class="p">()</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;TCFG_SORT : set() -&gt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+                <span class="n">add_error_log</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">add_warning_log</span><span class="p">(</span><span class="s2">&quot;TCFG_SORT : set() -&gt; The configuration is empty.&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="TCFG_SORT.getDocument">
+<a class="viewcode-back" href="../../../vsensebox/config.html#vsensebox.config.configurator.TCFG_SORT.getDocument">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getDocument</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a configuration dictionary of a single document of the attributes which </span>
+<span class="sd">        are the parameters of tracker SORT.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        dict</span>
+<span class="sd">            A configuration dictionary of a single document of the configurations.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">sort_doc</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;tracker&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">tracker</span><span class="p">,</span>
+            <span class="s2">&quot;max_age&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_age</span><span class="p">,</span>
+            <span class="s2">&quot;min_hits&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_hits</span><span class="p">,</span>
+            <span class="s2">&quot;iou_threshold&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">iou_threshold</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">sort_doc</span></div>
+</div>
+
+        
+
+<div class="viewcode-block" id="TCFG_DeepSORT">
+<a class="viewcode-back" href="../../../vsensebox/config.html#vsensebox.config.configurator.TCFG_DeepSORT">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">TCFG_DeepSORT</span><span class="p">(</span><span class="n">BaseCGF</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A class used to store the necessary configurations of tracker DeepSORT.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    tracker : str</span>
+<span class="sd">        Configured name of tracker DeepSORT.</span>
+<span class="sd">    nn_budget : int</span>
+<span class="sd">        Parameter :obj:`nn_budget` of tracker DeepSORT.</span>
+<span class="sd">    batch_size : int</span>
+<span class="sd">        Parameter :obj:`batch_size` of tracker DeepSORT.</span>
+<span class="sd">    nms_max_overlap : float</span>
+<span class="sd">        Parameter :obj:`nms_max_overlap` of tracker DeepSORT.</span>
+<span class="sd">    max_cosine_distance : float</span>
+<span class="sd">        Parameter :obj:`max_cosine_distance` of tracker DeepSORT.</span>
+<span class="sd">    model_file : str</span>
+<span class="sd">        Path of model file for tracker DeepSORT.</span>
+<span class="sd">    from_dir : str</span>
+<span class="sd">        Path of the root directory, relative to path of :attr:`model_file`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">relative_to_vsensebox_root</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize the class according to the :obj:`relative_to_vsensebox_root` which defines </span>
+<span class="sd">        whether all the paths inside your configuration file are relative to :code:`{vsensebox root}` </span>
+<span class="sd">        or not. If all the paths inside your configuration file have full absolute paths, setting </span>
+<span class="sd">        :obj:`relative_to_vsensebox_root` is optional.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        cfg : str or dict</span>
+<span class="sd">            A YAML/JSON file path, or a raw/ready dictionary.</span>
+<span class="sd">        relative_to_vsensebox_root : bool, default=False</span>
+<span class="sd">            (1) Set :code:`relative_to_vsensebox_root=False` to use your current working directory </span>
+<span class="sd">            as where all the paths in your configuration file are relative to; for example, </span>
+<span class="sd">            the path of :attr:`model_file` inside your configuration file is set relatively to </span>
+<span class="sd">            your current working directory. </span>
+<span class="sd">            (2) Set :code:`relative_to_vsensebox_root=True` when all the paths in your configuration </span>
+<span class="sd">            file are relative to :code:`{vsensebox root}`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">from_dir</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">relative_to_vsensebox_root</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">from_dir</span> <span class="o">=</span> <span class="n">IN_ROOT_DIR</span>
+        <span class="k">if</span> <span class="n">cfg</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
+
+<div class="viewcode-block" id="TCFG_DeepSORT.set">
+<a class="viewcode-back" href="../../../vsensebox/config.html#vsensebox.config.configurator.TCFG_DeepSORT.set">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set configurations according to :obj:`input`.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        input : str or dict</span>
+<span class="sd">            A YAML/JSON file path, or a raw/ready dictionary.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">loadDoc</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">tracker</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">unified_strings</span><span class="o">.</span><span class="n">getUnifiedFormat</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;tracker&#39;</span><span class="p">])</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">nn_budget</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;nn_budget&#39;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;batch_size&#39;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">nms_max_overlap</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;nms_max_overlap&#39;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">max_cosine_distance</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;max_cosine_distance&#39;</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">model_file</span> <span class="o">=</span> <span class="n">getAdaptiveAbsPathFDS</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">from_dir</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">configs</span><span class="p">[</span><span class="s1">&#39;model_file&#39;</span><span class="p">])</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">configs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getDocument</span><span class="p">()</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;TCFG_DeepSORT : set() -&gt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+                <span class="n">add_error_log</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">add_warning_log</span><span class="p">(</span><span class="s2">&quot;TCFG_DeepSORT : set() -&gt; The configuration is empty.&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="TCFG_DeepSORT.getDocument">
+<a class="viewcode-back" href="../../../vsensebox/config.html#vsensebox.config.configurator.TCFG_DeepSORT.getDocument">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getDocument</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a configuration dictionary of a single document of the attributes which </span>
+<span class="sd">        are the parameters of tracker DeepSORT.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        dict</span>
+<span class="sd">            A configuration dictionary of a single document of the configurations.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">deepsort_doc</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;tracker&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">tracker</span><span class="p">,</span>
+            <span class="s2">&quot;nn_budget&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">nn_budget</span><span class="p">,</span>
+            <span class="s2">&quot;batch_size&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span>
+            <span class="s2">&quot;nms_max_overlap&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">nms_max_overlap</span><span class="p">,</span>
+            <span class="s2">&quot;max_cosine_distance&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_cosine_distance</span><span class="p">,</span>
+            <span class="s2">&quot;model_file&quot;</span><span class="p">:</span> <span class="n">normalizePathFDS</span><span class="p">(</span><span class="n">IN_ROOT_DIR</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_file</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">deepsort_doc</span></div>
+</div>
+
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, UMONS-Numediart, Ratha SIV.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
