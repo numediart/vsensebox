@@ -19,13 +19,13 @@ def detect_and_track(vsense, input_video, det_yaml, trk_yaml, name="Detect & Tra
 
             # Detect object using local YAML config
             vsense.detect(img=frame, 
-                    config_yaml=det_yaml, 
-                    img_is_mat=True)
+                          config_yaml=det_yaml, 
+                          img_is_mat=True)
 
             # Track object using local YAML config
             vsense.track(img=frame, 
-                    config_yaml=trk_yaml, 
-                    img_is_mat=True)
+                         config_yaml=trk_yaml, 
+                         img_is_mat=True)
             
             # Draw bounding boxes of the detected objects
             frame = draw_boxes(
