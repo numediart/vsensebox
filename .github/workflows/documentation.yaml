@@ -12,15 +12,15 @@ jobs:
   build_docs:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-python@v5
+    - uses: actions/checkout@v6
+    - uses: actions/setup-python@v6
       with:
         python-version: '3.11'
     - name: Install base requirements
       run: |
         cd requirements
         python -m pip install --upgrade pip
-        pip install "setuptools>=67.2.0"
+        pip install "setuptools>=67.8.0"
         pip install wheel build
         pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
         pip install -r requirements.txt
