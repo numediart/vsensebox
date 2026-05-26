@@ -8,4 +8,4 @@ classes: null # NULL=Null=null is None in Python
 device: cpu
 max_det: 100
 line_width: 500
-model_file: yolov11n.pt
+model_file: yolov26n.pt
