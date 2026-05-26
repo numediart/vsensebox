@@ -1,6 +1,6 @@
 # VSenseBox - Python toolbox for visual sensing
-# GNU General Public License v3 or later (GPLv3+)
-# Copyright (C) 2024 UMONS-Numediart
+# GNU Affero General Public License v3.0 or later (AGPLv3+)
+# Copyright (C) 2026 UMONS-Numediart
 
 
 from setuptools import find_packages, setup
@@ -37,7 +37,7 @@ def main_setup():
         name="vsensebox",
         version=get_version_string(),
         url="https://github.com/numediart/vsensebox",
-        license="GPL-3.0-or-later",
+        license="AGPL-3.0-or-later",
         description="VSenseBox - Python toolbox for visual sensing.",
         long_description=long_description,
         long_description_content_type="text/markdown",
