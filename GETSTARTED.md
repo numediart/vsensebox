@@ -16,45 +16,19 @@ All requirements are not strictly limited. However, some specific modules might 
   - Upgrade `pip` and `setuptools`:
     ```
     python -m pip install --upgrade pip
-    pip install "setuptools>=67.2.0"
+    pip install "setuptools>=67.8.0"
     ```
   - Recommend uninstalling the official `Ultralytics`: 
     ```
     pip uninstall -y ultralytics
     ```
 
-* Install dependencies/requirments under `vsensebox/requirements/`: 
-  - For ***Windows***:
-    - With GPU:
-      ```
-      pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
-      pip install -r requirements.txt
-      ```
-    - With CPU-only (Or skip this and go straight to ***Setup*** section below):
-      ```
-      pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
-      pip install -r requirements.txt
-      ```
-  - For ***Linux***:
-    - With GPU:
-      ```
-      python -m pip install tensorflow[and-cuda] # TensorFlow GPU
-      pip install torch torchvision
-      pip install -r requirements.txt
-      ```
-    - With CPU-only (Or skip this and go straight to ***Setup*** section below):
-      ```
-      python -m pip install tensorflow # TensorFlow CPU
-      pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
-      pip install -r requirements.txt
-      ```
-  - For ***macOS***:
-    - With GPU: Not available!
-    - For CPU (Or skip this and go straight to ***Setup*** section below):
-      ```
-      pip install torch torchvision
-      pip install -r requirements.txt
-      ```
+* Install dependencies/requirements under `vsensebox/requirements/`:
+  - Before you install all dependencies from [requirements.txt](https://github.com/numediart/vsensebox/blob/main/requirements/requirements.txt), please make sure you first install [PyTorch (CPU or GPU)](https://pytorch.org/get-started/locally/) as appropriate for your system.
+    ```
+    # First, install PyTorch (CPU or GPU): https://pytorch.org/get-started/locally/
+    pip install -r requirements.txt
+    ```
 
 ## 💽 Setup
 
@@ -80,7 +54,7 @@ All requirements are not strictly limited. However, some specific modules might 
   - Or install the ones you need directly from the links below:
     ```
     pip install https://github.com/numediart/vsensebox-data/releases/download/v0.0.0/vsensebox_data_yolocls-0.0.0-py3-none-any.whl
-    pip install https://github.com/numediart/vsensebox-data/releases/download/v0.0.2/vsensebox_data_yoloult-0.0.2-py3-none-any.whl
+    pip install https://github.com/numediart/vsensebox-data/releases/download/v0.0.3/vsensebox_data_yoloult-0.0.3-py3-none-any.whl
     pip install https://github.com/numediart/vsensebox-data/releases/download/v0.0.0/vsensebox_data_deepsort-0.0.0-py3-none-any.whl
     ```
 
