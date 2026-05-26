@@ -1,6 +1,14 @@
 # Release Notes 
 
-## **VSenseBox v0.4.x - Hello Ultralytics YOLOv11!**
+## **VSenseBox v0.5.x - Hello YOLOv12 and YOLOv26!**
+
+* `VSenseBox` [v0.5.0](https://github.com/numediart/vsensebox/tree/v0.5.0)
+  - Add YOLOv11 and YOLOv26 config files
+  - Change license from GPLv3+ to AGPLv3+
+  - Update requirements, examples, tests
+  - Update and improve documentation
+
+## **VSenseBox v0.4.x - Hello YOLOv11!**
 
 * `VSenseBox` [v0.4.1](https://github.com/numediart/vsensebox/tree/v0.4.1)
   - Improve example 01
@@ -8,8 +16,8 @@
   - Update and improve documentation
 
 * `VSenseBox` [v0.4.0](https://github.com/numediart/vsensebox/tree/v0.4.0)
-  - Add Ultralytics YOLOv11 config files
-  - Use Ultralytics YOLOv11 in examples and tests
+  - Add YOLOv11 config files
+  - Use YOLOv11 in examples and tests
   - Update requirements for Ultralytics YOLOv11
   - Update documentation and GitHub workflows
 
