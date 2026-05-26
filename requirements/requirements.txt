@@ -31,6 +31,6 @@ lapx>=0.5.11
 ### GUI
 PyQt6
 ### Customized vsensebox-ultralytics
-vsensebox-ultralytics>=8.3.5
+vsensebox-ultralytics>=8.4.7
 ### Frame rate calculator in examples
 sfps
